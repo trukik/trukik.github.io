@@ -21,26 +21,40 @@
 
     .flex-item-left {
       background-color: firebrick;
-      padding: 10px;
+      padding: 5px;
       flex: 33%;
     }
 
     .flex-item-mid {
       background-color: darkgreen;
-      padding: 10px;
-      flex: 34%;
+      padding: 5px;
+      flex: 33%;
     }
 
     .flex-item-right {
       background-color: navy;
-      padding: 10px;
+      padding: 5px;
       flex: 33%;
     }
     
-    /* Responsive layout - makes a one column-layout instead of a two-column layout */
-    @media (max-width: 800px) {
+    @media screen and (min-width: 900px) {
+      .nameplate{
+        font-size: calc(18px + (50 - 18) * ((100vw - 900px) / (1750 - 900)));
+      }
+    }
+    
+    @media screen and (min-width: 1750px) {
+      .nameplate{
+        font-size: 50px;
+      }
+    }
+    
+    @media (max-width: 900px) {
       .flex-item-right, .flex-item-mid, .flex-item-left {
         flex: 100%;
+      }
+      .nameplate {
+        font-size: 50px;
       }
     }
 
@@ -57,11 +71,28 @@
       background-color: grey;
     }
 
+    .nameplate {
+      width: 80%;
+      height: 80px;
+      text-align:left;
+      border-radius:20px;
+      padding-left:10%;
+      font-family:'Passion One';
+      border-size: 2px;
+      border-color: black;
+      border-style: solid;
+      background-color: lightgrey;
+    }
+    
+    .nameplate:hover {
+      background-color: purple;
+    }
+    
     </style>
   </head>
   <body>
     <nav>
-      <button type="button" onclick="window.location.href='index.html'" class="target">Start</button>
+      <button type="button" onclick="window.location.href='index.html'" class="target" style="width: 80%">Start</button>
       <button type="button" disabled="true" class="present">Teams</button>
       <button type="button" onclick="window.location.href='aufgaben.html'" class="target">Aufgaben</button>
       <button type="button" onclick="window.location.href='regeln.html'" class="target">Regeln</button>
@@ -77,108 +108,108 @@
      <!--Team 1-->
 
   <div class="flex-item-left">
-    Team 1
+    TEAM ROT
     <p><!--player Collins-->
-      <a href="https://www.twitch.tv/collins1403" target="_blank">
+      <button type="button" onclick=window.open("https://www.twitch.tv/collins1403") class="nameplate">
         <img src="img/collinsBanner.png" alt="Collins Banner" width="60" height="60" style="vertical-align:middle;border-radius: 30px;margin-right: 10px;" />collins1403
-      </a>
+      </button>
     </p>
     <p><!--player Hamsti-->
-      <a href="https://www.twitch.tv/hamsti_yt" target="_blank">
+      <button type="button" onclick=window.open("https://www.twitch.tv/hamsti_yt") class="nameplate">
         <img src="img/hamstiBanner.png" alt="Hamsti Banner" width="60" height="60" style="vertical-align:middle;border-radius: 30px;margin-right: 10px;" />Hamsti
-      </a>
+      </button>
     </p>
-     <p><!--player Paddy-->
-      <a href="https://www.twitch.tv/paddypharo" target="_blank">
+    <p><!--player Paddy-->
+       <button type="button" onclick=window.open("https://www.twitch.tv/paddypharo") class="nameplate">
         <img src="img/paddyBanner.png" alt="Paddy Banner" width="60" height="60" style="vertical-align:middle;border-radius: 30px;margin-right: 10px;" />Paddy
-      </a>
+       </button>
     </p>
-     <p><!--player M4tschii-->
-      <a href="https://www.twitch.tv/m4tschii" target="_blank">
+    <p><!--player M4tschii-->
+       <button type="button" onclick=window.open("https://www.twitch.tv/m4tschii") class="nameplate">
         <img src="img/m4tschiiBanner.png" alt="M4tschii Banner" width="60" height="60" style="vertical-align:middle;border-radius: 30px;margin-right: 10px;" />M4tschii
-      </a>
+       </button>
     </p>
     <p><!--player Grumpei-->
-      <a href="https://www.twitch.tv/grumpei" target="_blank">
+      <button type="button" onclick=window.open("https://www.twitch.tv/grumpei") class="nameplate">
         <img src="img/grumpeiBanner.png" alt="Grumpei Banner" width="60" height="60" style="vertical-align:middle;border-radius: 30px;margin-right: 10px;" />Grumpei
-      </a>
+      </button>
     </p>
     <p><!--player HappySelli-->
-      <a href="https://www.twitch.tv/happyselli" target="_blank">
+      <button type="button" onclick=window.open("https://www.twitch.tv/happyselli") class="nameplate">
         <img src="img/selliBanner.png" alt="HappySelli Banner" width="60" height="60" style="vertical-align:middle;border-radius: 30px;margin-right: 10px;" />HappySelli
-      </a>
+      </button>
     </p>
   </div>
 
   <!--Team 2-->
 
   <div class="flex-item-mid">
-    Team 2
+    TEAM GRÜN
     <p><!--player GaTo-->
-      <a href="https://www.twitch.tv/gato_live" target="_blank">
+      <button type="button" onclick=window.open("https://www.twitch.tv/gato_live") class="nameplate">
         <img src="img/gatoBanner.jpg" alt="GaTo Banner" width="60" height="60" style="vertical-align:middle;border-radius: 30px;margin-right: 10px;" />GaTo
-      </a>
+      </button>
     </p>
     <p><!--player ISAR-->
-      <a href="https://www.twitch.tv/isargaming" target="_blank">
+      <button type="button" onclick=window.open("https://www.twitch.tv/isargaming") class="nameplate">
         <img src="img/isarBanner.png" alt="ISAR Banner" width="60" height="60" style="vertical-align:middle;border-radius: 30px;margin-right: 10px;" />ISAR
-      </a>
+      </button>
     </p>
-     <p><!--player ringko-->
-      <a href="https://www.twitch.tv/ringko1988" target="_blank">
+    <p><!--player ringko-->
+      <button type="button" onclick=window.open("https://www.twitch.tv/ringko1988") class="nameplate">
         <img src="img/ringkoBanner.png" alt="ringko Banner" width="60" height="60" style="vertical-align:middle;border-radius: 30px;margin-right: 10px;" />ringko
-      </a>
+      </button>
     </p>
-     <p><!--player Schobi-->
-      <a href="https://www.twitch.tv/scheinheiligesau" target="_blank">
+    <p><!--player Schobi-->
+      <button type="button" onclick=window.open("https://www.twitch.tv/scheinheiligesau") class="nameplate">
         <img src="img/schobiBanner.png" alt="Schobi Banner" width="60" height="60" style="vertical-align:middle;border-radius: 30px;margin-right: 10px;" />ScheinheiligeSau
-      </a>
+      </button>
     </p>
     <p><!--player chasun-->
-      <a href="https://www.twitch.tv/chasun_" target="_blank">
+      <button type="button" onclick=window.open("https://www.twitch.tv/chasun_") class="nameplate">
         <img src="img/chasunBanner.png" alt="chasun Banner" width="60" height="60" style="vertical-align:middle;border-radius: 30px;margin-right: 10px;" />chasun
-      </a>
+      </button>
     </p>
     <p><!--player xicanmeow-->
-      <a href="https://www.twitch.tv/xicanmeow" target="_blank">
+      <button type="button" onclick=window.open("https://www.twitch.tv/xicanmeow") class="nameplate">
         <img src="img/xicanBanner.png" alt="xicanmeow Banner" width="60" height="60" style="vertical-align:middle;border-radius: 30px;margin-right: 10px;" />xicanmeow
-      </a>
+      </button>
     </p>
   </div>
 
   <!--Team 3-->
 
   <div class="flex-item-right">
-    Team 3
+    TEAM BLAU
     <p><!--player Kay-->
-      <a href="https://www.twitch.tv/kaaaay" target="_blank">
+      <button type="button" onclick=window.open("https://www.twitch.tv/kaaaay") class="nameplate">
         <img src="img/kayBanner.jpg" alt="Kay Banner" width="60" height="60" style="vertical-align:middle;border-radius: 30px;margin-right: 10px;" />Kay
-      </a>
+      </button>
     </p>
     <p><!--player theddy-->
-      <a href="https://www.twitch.tv/theddy" target="_blank">
+      <button type="button" onclick=window.open("https://www.twitch.tv/theddy") class="nameplate">
         <img src="img/theddyBanner.png" alt="theddy Banner" width="60" height="60" style="vertical-align:middle;border-radius: 30px;margin-right: 10px;" />theddy
-      </a>
+      </button>
     </p>
     <p><!--player no2u_ttv-->
-      <a href="https://www.twitch.tv/no2u_ttv" target="_blank">
+      <button type="button" onclick=window.open("https://www.twitch.tv/no2u_ttv") class="nameplate">
         <img src="img/no2uBanner.png" alt="no2u_ttv Banner" width="60" height="60" style="vertical-align:middle;border-radius: 30px;margin-right: 10px;" />no2u_ttv
-      </a>
+      </button>
     </p>
     <p><!--player mellie-->
-      <a href="https://www.twitch.tv/melliepirellie" target="_blank">
+      <button type="button" onclick=window.open("https://www.twitch.tv/melliepirellie") class="nameplate">
         <img src="img/mellieBanner.png" alt="melliePirellie Banner" width="60" height="60" style="vertical-align:middle;border-radius: 30px;margin-right: 10px;" />MelliePirellie
-      </a>
+      </button>
     </p>
     <p><!--player sebo-->
-      <a href="https://www.twitch.tv/sebo" target="_blank">
+      <button type="button" onclick=window.open("https://www.twitch.tv/sebo") class="nameplate">
         <img src="img/seboBanner.png" alt="sebo Banner" width="60" height="60" style="vertical-align:middle;border-radius: 30px;margin-right: 10px;" />sebo
-      </a>
+      </button>
     </p>
     <p><!--player rusok-->
-      <a href="https://www.twitch.tv/rusok" target="_blank">
+      <button type="button" onclick=window.open("https://www.twitch.tv/rusok") class="nameplate">
         <img src="img/rusokBanner.png" alt="rusok Banner" width="60" height="60" style="vertical-align:middle;border-radius: 30px;margin-right: 10px;" />rusok
-      </a>
+      </button>
     </p>
   </div>
 </div>
