@@ -11,6 +11,133 @@
 				background-size: cover;
 			}
 
+			* {
+				box-sizing: border-box;
+			}
+
+			.flex-container {
+				display: flex;
+				flex-wrap: wrap;
+				text-align: center;
+			}
+
+			.flex-item-red {
+				background-color: rgba(178, 34, 34, 0.65);
+			}
+
+			.flex-item-green {
+				background-color: rgba(0, 100, 0, 0.65);
+			}
+
+			.flex-item-blue {
+				background-color: rgba(0, 0, 128, 0.65);
+			}
+
+			.flex-item-red, .flex-item-green, .flex-item-blue {
+				background-image: url("img/scale.png");
+				background-position-y: 6px;
+				padding: 5px;
+				flex: 30%;
+				color: white;
+				font-size: 60px;
+			}
+
+			.flex-item-score {
+				background-image: url("img/scale.png");
+				background-position-y: 6px;
+				padding: 5px;
+				flex: 10%;
+				background-color: rgba(255, 255, 255, 0.65);
+			}
+
+			
+
+			/*
+			.scorebox:after {
+				content: '\200b';
+			}
+			*/
+			:root {
+				--qRed: 300;
+				--aRed: 300;
+				--eRed: 300;
+				--qGreen: 300;
+				--aGreen: 300;
+				--eGreen: 300;
+				--qBlue: 0;
+				--aBlue: 0;
+				--eBlue: 0;
+			}
+
+			@media (max-width: 900px) {
+				.flex-item-score, .flex-item-red, .flex-item-green, .flex-item-blue {
+					flex: 100%;
+				}
+			}
+
+			/*Scoreboard red styles and resizes*/
+			.sbrb {
+				height: calc(900px - (var(--qRed) + var(--aRed) + var(--eRed))*1px);
+			}
+			.sbrq {
+				height: calc(60px + (var(--qRed) * 1px));
+				background-color: orange;
+			}
+			.sbra {
+				height: calc(60px + (var(--aRed) * 1px));
+				background-color: teal;
+			}
+			.sbre {
+				height: calc(60px + (var(--eRed) * 1px));
+				background-color: dodgerblue;
+			}
+			/*Scoreboard green styles and resizes*/
+			.sbgb {
+				height: calc(900px - (var(--qGreen) + var(--aGreen) + var(--eGreen))*1px);
+			}
+			.sbgq {
+				height: calc(var(--qGreen) * 1px);
+				background-color: orange;
+			}
+			.sbga {
+				height: calc(var(--aGreen) * 1px);
+				background-color: teal;
+			}
+			.sbge {
+				height: calc(var(--eGreen) * 1px);
+				background-color: dodgerblue;
+			}
+			.sbgf {
+				height: 180px;
+			}
+			/*Scoreboard blue styles and resizes*/
+			.sbbb {
+				height: calc(900px - (var(--qBlue) + var(--aBlue) + var(--eBlue)) * 1px);
+			}
+			.sbbq {
+				height: calc(60px + var(--qBlue)*1px);
+				background-color: orange;
+			}
+			.sbba {
+				height: calc(60px + var(--aBlue)*1px);
+				background-color: teal;
+			}
+			.sbbe {
+				height: calc(60px + var(--eBlue)*1px);
+				background-color: dodgerblue;
+			}
+			
+	
+			
+			.scorebox {
+				width: 50%;
+				hieght: 10px;
+				margin-left: 25%;
+				border-size: 1px;
+				border-color: black;
+				text-align: middle;
+			}
+
 		</style>
 	</head>
 	<body>
@@ -21,5 +148,37 @@
 			<button type="button" onclick="window.location.href='regeln.html'" class="target">Regeln</button>
 			<button type="button" onclick="window.location.href='highlights.html'" class="target">Highlights</button>
 		</nav>
+
+		<div class="flex-container">
+			<!--Display Score Steps-->
+			<div class="flex-item-score">
+				<div class="scorebox" style=" background-color: orange; height: 300px;">Questline</div>
+				<div class="scorebox" style=" background-color: teal; height: 300px;">Aufgaben</div>
+				<div class="scorebox" style=" background-color: dodgerblue; height: 300px;">Events</div>
+				<div class="scorebox" style=" height: 180px;">stütze</div>
+			</div>
+			<!--Display Score Team red-->
+			<div class="flex-item-red">
+				<div class="scorebox sbrb"></div>
+				<div class="scorebox sbrq">Questline</div>
+				<div class="scorebox sbra">Aufgaben</div>
+				<div class="scorebox sbre">Events</div>
+			</div>
+			<!--Display Score Team green-->
+			<div class="flex-item-green">
+				<div class="scorebox sbgb"></div>
+				<div class="scorebox sbgq">Questline</div>
+				<div class="scorebox sbga">Aufgaben</div>
+				<div class="scorebox sbge">Events</div>
+				<div class="scorebox sbgf"></div>
+			</div>
+			<!--Display Score Team blue-->
+			<div class="flex-item-blue">
+				<div class="scorebox sbbb"></div>
+				<div class="scorebox sbbq">Questline</div>
+				<div class="scorebox sbba">Aufgaben</div>
+				<div class="scorebox sbbe">Events</div>
+			</div>
+		</div>
 	</body>
 </html>
