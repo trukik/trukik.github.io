@@ -36,6 +36,10 @@
 			.flex-item-red, .flex-item-green, .flex-item-blue {
 				background-image: url("img/scale.png");
 				background-position-y: 6px;
+				/*
+				background-repeat: no-repeat;
+				background-size: cover;
+				*/
 				padding: 5px;
 				flex: 30%;
 				color: white;
@@ -45,28 +49,26 @@
 			.flex-item-score {
 				background-image: url("img/scale.png");
 				background-position-y: 6px;
+				/*
+				background-repeat: no-repeat;
+				background-size: cover;
+				*/
 				padding: 5px;
 				flex: 10%;
 				background-color: rgba(255, 255, 255, 0.65);
 			}
 
-			
-
-			/*
-			.scorebox:after {
-				content: '\200b';
-			}
-			*/
+			/*q,a,e muss zusammen 900 ergeben, 900 ist die Höhe ganzen Skala*/
 			:root {
-				--qRed: 0;
-				--aRed: 0;
-				--eRed: 0;
-				--qGreen: 0;
-				--aGreen: 0;
-				--eGreen: 0;
-				--qBlue: 0;
-				--aBlue: 0;
-				--eBlue: 0;
+				--qRed: 20;
+				--aRed: 50;
+				--eRed: 100;
+				--qGreen: 250;
+				--aGreen: 100;
+				--eGreen: 80;
+				--qBlue: 50;
+				--aBlue: 50;
+				--eBlue: 50;
 			}
 
 			@media (max-width: 900px) {
@@ -80,31 +82,34 @@
 				height: calc(900px - (var(--qRed) + var(--aRed) + var(--eRed))*1px);
 			}
 			.sbrq {
-				height: calc(60px + (var(--qRed) * 1px));
+				height: calc(0px + (var(--qRed) * 1px));
 				background-color: orange;
 			}
 			.sbra {
-				height: calc(60px + (var(--aRed) * 1px));
+				height: calc(0px + (var(--aRed) * 1px));
 				background-color: teal;
 			}
 			.sbre {
-				height: calc(60px + (var(--eRed) * 1px));
+				height: calc(0px + (var(--eRed) * 1px));
 				background-color: dodgerblue;
+			}
+			.sbgf {
+				height: 180px;
 			}
 			/*Scoreboard green styles and resizes*/
 			.sbgb {
 				height: calc(900px - (var(--qGreen) + var(--aGreen) + var(--eGreen))*1px);
 			}
 			.sbgq {
-				height: calc(var(--qGreen) * 1px);
+				height: calc(0px + var(--qGreen) * 1px);
 				background-color: orange;
 			}
 			.sbga {
-				height: calc(var(--aGreen) * 1px);
+				height: calc(0px + var(--aGreen) * 1px);
 				background-color: teal;
 			}
 			.sbge {
-				height: calc(var(--eGreen) * 1px);
+				height: calc(0px + var(--eGreen) * 1px);
 				background-color: dodgerblue;
 			}
 			.sbgf {
@@ -115,18 +120,20 @@
 				height: calc(900px - (var(--qBlue) + var(--aBlue) + var(--eBlue)) * 1px);
 			}
 			.sbbq {
-				height: calc(60px + var(--qBlue)*1px);
+				height: calc(0px + var(--qBlue)*1px);
 				background-color: orange;
 			}
 			.sbba {
-				height: calc(60px + var(--aBlue)*1px);
+				height: calc(0px + var(--aBlue)*1px);
 				background-color: teal;
 			}
 			.sbbe {
-				height: calc(60px + var(--eBlue)*1px);
+				height: calc(0px + var(--eBlue)*1px);
 				background-color: dodgerblue;
 			}
-			
+			.sbgf {
+				height: 180px;
+			}
 	
 			
 			.scorebox {
@@ -155,29 +162,31 @@
 				<div class="scorebox" style=" background-color: orange; height: 300px;">Questline</div>
 				<div class="scorebox" style=" background-color: teal; height: 300px;">Aufgaben</div>
 				<div class="scorebox" style=" background-color: dodgerblue; height: 300px;">Events</div>
-				<div class="scorebox" style=" height: 180px;">stütze</div>
+				<div class="scorebox" style=" height: 180px;"></div>
 			</div>
 			<!--Display Score Team red-->
 			<div class="flex-item-red">
 				<div class="scorebox sbrb"></div>
-				<div class="scorebox sbrq">Questline</div>
-				<div class="scorebox sbra">Aufgaben</div>
-				<div class="scorebox sbre">Events</div>
+				<div class="scorebox sbrq"></div>
+				<div class="scorebox sbra"></div>
+				<div class="scorebox sbre"></div>
+				<div class="scorebox sbrf"></div>
 			</div>
 			<!--Display Score Team green-->
 			<div class="flex-item-green">
 				<div class="scorebox sbgb"></div>
-				<div class="scorebox sbgq">Questline</div>
-				<div class="scorebox sbga">Aufgaben</div>
-				<div class="scorebox sbge">Events</div>
+				<div class="scorebox sbgq"></div>
+				<div class="scorebox sbga"></div>
+				<div class="scorebox sbge"></div>
 				<div class="scorebox sbgf"></div>
 			</div>
 			<!--Display Score Team blue-->
 			<div class="flex-item-blue">
 				<div class="scorebox sbbb"></div>
-				<div class="scorebox sbbq">Questline</div>
-				<div class="scorebox sbba">Aufgaben</div>
-				<div class="scorebox sbbe">Events</div>
+				<div class="scorebox sbbq"></div>
+				<div class="scorebox sbba"></div>
+				<div class="scorebox sbbe"></div>
+				<div class="scorebox sbbf"></div>
 			</div>
 		</div>
 	</body>
