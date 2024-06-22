@@ -3,191 +3,73 @@
 	<head>
 		<title>Ark Quest - Aufgaben</title>
 		<style type="text/css">
+
+			/*
 			body {
-				background-image: url("img/standard.gif");
+
 				height: 1200px;
 				background-position: center;
 				background-repeat: no-repeat;
 				background-size: cover;
 			}
+			*/
 
-			* {
-				box-sizing: border-box;
-			}
-
-			.flex-container {
-				display: flex;
-				flex-wrap: wrap;
+			div {
+				font-size: 100px;
+				color: white;
+				background-color: grey;
 				text-align: center;
 			}
 
-			.flex-item-red {
-				background-color: rgba(178, 34, 34, 0.65);
+			li {
+				font-size: 75px;
 			}
 
-			.flex-item-green {
-				background-color: rgba(0, 100, 0, 0.65);
-			}
-
-			.flex-item-blue {
-				background-color: rgba(0, 0, 128, 0.65);
-			}
-
-			.flex-item-red, .flex-item-green, .flex-item-blue {
-				background-image: url("img/scale.png");
-				background-position-y: 6px;
-				/*
-				background-repeat: no-repeat;
-				background-size: cover;
-				*/
-				padding: 5px;
-				flex: 30%;
-				color: white;
-				font-size: 60px;
-			}
-
-			.flex-item-score {
-				background-image: url("img/scale.png");
-				background-position-y: 6px;
-				/*
-				background-repeat: no-repeat;
-				background-size: cover;
-				*/
-				padding: 5px;
-				flex: 10%;
-				background-color: rgba(255, 255, 255, 0.65);
-			}
-
-			/*q,a,e muss zusammen 900 ergeben, 900 ist die Höhe ganzen Skala*/
-			:root {
-				--qRed: 20;
-				--aRed: 50;
-				--eRed: 100;
-				--qGreen: 250;
-				--aGreen: 100;
-				--eGreen: 80;
-				--qBlue: 50;
-				--aBlue: 50;
-				--eBlue: 50;
-			}
-
-			@media (max-width: 900px) {
-				.flex-item-score, .flex-item-red, .flex-item-green, .flex-item-blue {
-					flex: 100%;
-				}
-			}
-
-			/*Scoreboard red styles and resizes*/
-			.sbrb {
-				height: calc(900px - (var(--qRed) + var(--aRed) + var(--eRed))*1px);
-			}
-			.sbrq {
-				height: calc(0px + (var(--qRed) * 1px));
-				background-color: orange;
-			}
-			.sbra {
-				height: calc(0px + (var(--aRed) * 1px));
-				background-color: teal;
-			}
-			.sbre {
-				height: calc(0px + (var(--eRed) * 1px));
-				background-color: dodgerblue;
-			}
-			.sbgf {
-				height: 180px;
-			}
-			/*Scoreboard green styles and resizes*/
-			.sbgb {
-				height: calc(900px - (var(--qGreen) + var(--aGreen) + var(--eGreen))*1px);
-			}
-			.sbgq {
-				height: calc(0px + var(--qGreen) * 1px);
-				background-color: orange;
-			}
-			.sbga {
-				height: calc(0px + var(--aGreen) * 1px);
-				background-color: teal;
-			}
-			.sbge {
-				height: calc(0px + var(--eGreen) * 1px);
-				background-color: dodgerblue;
-			}
-			.sbgf {
-				height: 180px;
-			}
-			/*Scoreboard blue styles and resizes*/
-			.sbbb {
-				height: calc(900px - (var(--qBlue) + var(--aBlue) + var(--eBlue)) * 1px);
-			}
-			.sbbq {
-				height: calc(0px + var(--qBlue)*1px);
-				background-color: orange;
-			}
-			.sbba {
-				height: calc(0px + var(--aBlue)*1px);
-				background-color: teal;
-			}
-			.sbbe {
-				height: calc(0px + var(--eBlue)*1px);
-				background-color: dodgerblue;
-			}
-			.sbgf {
-				height: 180px;
-			}
-	
-			
-			.scorebox {
-				width: 50%;
-				hieght: 10px;
-				margin-left: 25%;
-				border-size: 1px;
-				border-color: black;
-				text-align: middle;
+			video {
+				width: 100vw;
+				height: 100vh;
+				object-fit: cover;
+				position: fixed;
+				
+				left: 0;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				z-index: -100;
 			}
 
 		</style>
 	</head>
 	<body>
+
+		<video autoplay loop muted>
+			<source src="img/bgVid.mp4" type="video/mp4">
+		</video>
+
 		<nav>
 			<button type="button" onclick="window.location.href='index.html'" class="target">Start</button>
 			<button type="button" onclick="window.location.href='teams.html'" class="target">Teams</button>
+			<button type="button" onclick="window.location.href='punkte.html'" class="target">Punkte</button>
 			<button type="button" disabled="true" class="present">Aufgaben</button>
-			<button type="button" onclick="window.location.href='regeln.html'" class="target">Regeln</button>
 			<button type="button" onclick="window.location.href='highlights.html'" class="target">Highlights</button>
 		</nav>
 
-		<div class="flex-container">
-			<!--Display Score Steps-->
-			<div class="flex-item-score">
-				<div class="scorebox" style=" background-color: orange; height: 300px;">Questline</div>
-				<div class="scorebox" style=" background-color: teal; height: 300px;">Aufgaben</div>
-				<div class="scorebox" style=" background-color: dodgerblue; height: 300px;">Events</div>
-				<div class="scorebox" style=" height: 180px;"></div>
-			</div>
-			<!--Display Score Team red-->
-			<div class="flex-item-red">
-				<div class="scorebox sbrb"></div>
-				<div class="scorebox sbrq"></div>
-				<div class="scorebox sbra"></div>
-				<div class="scorebox sbre"></div>
-				<div class="scorebox sbrf"></div>
-			</div>
-			<!--Display Score Team green-->
-			<div class="flex-item-green">
-				<div class="scorebox sbgb"></div>
-				<div class="scorebox sbgq"></div>
-				<div class="scorebox sbga"></div>
-				<div class="scorebox sbge"></div>
-				<div class="scorebox sbgf"></div>
-			</div>
-			<!--Display Score Team blue-->
-			<div class="flex-item-blue">
-				<div class="scorebox sbbb"></div>
-				<div class="scorebox sbbq"></div>
-				<div class="scorebox sbba"></div>
-				<div class="scorebox sbbe"></div>
-				<div class="scorebox sbbf"></div>
-			</div>
-		</div>
+		<div>Bisher gefundene Aufgaben</div>
+
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+			<li>7</li>
+			<li>8</li>
+			<li>9</li>
+			<li>10</li>
+			<li>11</li>
+			<li>12</li>
+		</ul>
+
 	</body>
 </html>

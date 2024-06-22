@@ -24,21 +24,28 @@
 
       .flex-item-left {
         background-color: rgba(178, 34, 34, 0.65);
+        box-shadow: 5px 5px 5px black;
       }
 
       .flex-item-mid {
         background-color: rgba(0, 100, 0, 0.65);
+        box-shadow: 5px 5px 5px black;
       }
 
       .flex-item-right {
         background-color: rgba(0, 0, 128, 0.65);
+        box-shadow: 5px 5px 5px black;
       }
 
       .flex-item-left, .flex-item-mid, .flex-item-right {
-        padding: 5px;
-        flex: 33%;
+        margin: 15px;
+        padding-top: 15px;
+        padding-bottom: 50px;
+        border-radius: 50px;
+        flex: 30%;
         color: white;
-        font-size: 60px;
+        font-size: 65px;
+        text-shadow: 5px 5px 5px black;
       }
 
       @media screen and (min-width: 900px) {
@@ -98,7 +105,6 @@
         margin-top: 5px;
         margin-bottom: 5px;
         background-color: rgb(80, 80, 80);
-        font-size: 110%;
         color: white;
       }
 
@@ -115,21 +121,46 @@
       .target:hover {
 
       }
+      
+      video {
+				width: 100vw;
+				height: 100vh;
+				object-fit: cover;
+				position: fixed;
+				left: 0;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				z-index: -100;
+			}
+      
+      .mainlogo {
+        width: 100%;
+        text-align: center;
+        font-size: 100px;
+        color: white;
+        text-shadow: 6px 6px 6px black;
+      }
 
     </style>
   </head>
   <body>
+    
+    <video autoplay loop muted>
+			<source src="img/bgVid.mp4" type="video/mp4">
+		</video>
+    
     <nav>
       <button type="button" onclick="window.location.href='index.html'" class="target">Start</button>
       <button type="button" disabled="true" class="present">Teams</button>
+      <button type="button" onclick="window.location.href='punkte.html'" class="target">Punkte</button>
       <button type="button" onclick="window.location.href='aufgaben.html'" class="target">Aufgaben</button>
-      <button type="button" onclick="window.location.href='regeln.html'" class="target">Regeln</button>
       <button type="button" onclick="window.location.href='highlights.html'" class="target">Highlights</button>
     </nav>
 
-    <h1>ARK Quest</h1>
-
-    <p>Vorläufige Teams in der Einladungsphase des Projektes</p>
+    <div class="mainlogo">
+      HIER KÖNNTE IHR LOGO STEHEN
+    <div/>
 
     <div class="flex-container">
       <!--Team 1-->
@@ -222,6 +253,10 @@
         <!--player rusok-->
         <button type="button" onclick=window.open("https://www.twitch.tv/rusok") class="nameplate">
           <img src="img/rusokBanner.png" alt="rusok Banner" width="60" height="60" class="logo"/>rusok
+        </button>
+        <!--player nini-->
+        <button type="button" onclick=window.open("https://www.twitch.tv/nini1704") class="nameplate">
+          <img src="img/niniBanner.png" alt="nini Banner" width="60" height="60" class="logo"/>Nini1704
         </button>
       </div>
     </div>

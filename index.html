@@ -5,20 +5,38 @@
 		<style type="text/css">
 			body {
 				background-image: url("img/standard.gif");
-				height: 1200px;
 				background-position: center;
 				background-repeat: no-repeat;
 				background-size: cover;
+				background-attachment: fixed;
 			}
 
+			video {
+				width: 100vw;
+				height: 100vh;
+				object-fit: cover;
+				position: fixed;
+				
+				left: 0;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				z-index: -100;
+			}
+			
 		</style>
 	</head>
 	<body>
+		
+		<video autoplay loop muted>
+			<source src="img/bgVid.mp4" type="video/mp4">
+		</video>
+		
 		<nav>
 			<button type="button" disabled="true" class="present">Start</button>
 			<button type="button" onclick="window.location.href='teams.html'" class="target">Teams</button>
+			<button type="button" onclick="window.location.href='punkte.html'" class="target">Punkte</button>
 			<button type="button" onclick="window.location.href='aufgaben.html'" class="target">Aufgaben</button>
-			<button type="button" onclick="window.location.href='regeln.html'" class="target">Regeln</button>
 			<button type="button" onclick="window.location.href='highlights.html'" class="target">Highlights</button>
 		</nav>
 	</body>

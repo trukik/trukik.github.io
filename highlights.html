@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<title>Ark Quest - Highlights</title>
+		<link href='https://fonts.googleapis.com/css?family=Passion One' rel='stylesheet'>
 		<style type="text/css">
 			body {
 				background-image: url("img/standard.gif");
@@ -9,19 +10,152 @@
 				background-position: center;
 				background-repeat: no-repeat;
 				background-size: cover;
+				background-attachment: fixed;
+				font-family: 'Passion One';
+			}
+
+			div {
+				font-family: 'Passion One';
+				font-size: 30px;
+				white-space: nowrap;
+				overflow: hidden;
+			}
+
+			.clip {
+				width: 20%;
+				height: 20%;
+				margin: 25px;
+				border-radius: 15px;
+				overflow: hidden;
+			}
+
+			.noscroll {
+				width: 100%;
+				height: 50px;  
+				overflow: hidden;
+				position: relative;
+			}
+			
+			.noscroll p {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				margin: 0;
+				line-height: 50px;
+				text-align: center;
+			}
+			
+			.noscroll marquee {
+				height: 100%;
+				line-height: 50px;
+				text-align: center;
+			}
+			
+			video {
+				width: 100vw;
+				height: 100vh;
+				object-fit: cover;
+				position: fixed;
+				
+				left: 0;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				z-index: -100;
 			}
 
 		</style>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+		<script>
+			/*width, height of clip img*/
+			$(document).ready(function () {
+				$(".clip").hover(function () {
+						$(this).width($(this).width()+50).height($(this).height()+50);
+						$(this).css({"margin": "0px", "background-color": "purple", "border-color": "purple", "color":"white"});
+					}, function () {
+						$(this).width($(this).width()-50).height($(this).height()-50);
+						$(this).css({"margin": "25px", "background-color": "white", "border-color": "white", "color":"black"});
+					});
+			});
+		</script>
 	</head>
 	<body>
+		
+		<video autoplay loop muted>
+			<source src="img/bgVid.mp4" type="video/mp4">
+		</video>
+		
 		<nav>
-			<button type="button" onclick="window.location.href='index.html'" class="target">Start</button>
-			<button type="button" onclick="window.location.href='teams.html'" class="target">Teams</button>
-			<button type="button" onclick="window.location.href='aufgaben.html'" class="target">Aufgaben</button>
-			<button type="button" onclick="window.location.href='regeln.html'" class="target">Regeln</button>
+			<button type="button" onclick="window.location.href = 'index.html'" class="target">Start</button>
+			<button type="button" onclick="window.location.href = 'teams.html'" class="target">Teams</button>
+			<button type="button" onclick="window.location.href = 'punkte.html'" class="target">Punkte</button>
+			<button type="button" onclick="window.location.href = 'aufgaben.html'" class="target">Aufgaben</button>
 			<button type="button" disabled="true" class="present">Highlights</button>
 		</nav>
-		<iframe src="https://clips.twitch.tv/embed?clip=WildWealthyCrabsPlanking&parent=www.example.com" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="620"></iframe>
-
+	
+		<button onclick=window.open("https://www.twitch.tv/gato_live/clip/WildWealthyCrabsPlanking") class="clip">
+			<div>
+				<img src="img/gatoClip1.jpg"/>
+			</div>
+			<div class="noscroll">
+				<marquee behavior="" direction="left">GaTo - "OMG dieser shot".... ist zwar nur ein rhino :)</marquee>
+			</div>
+		</button>
+		<button onclick=window.open("https://www.twitch.tv/kaaaay/clip/FilthySweetConsole4Head-5tq-DEbswsbkRduD") class="clip">
+			<div>
+				<img src="img/kayClip1.jpg"/>
+			</div>
+			<div class="noscroll"> 
+				<p>Kay - Ups</p>
+			</div>
+		</button>
+		<button onclick=window.open("https://www.twitch.tv/kaaaay/clip/MildThoughtfulCaribouGivePLZ--a1uaJBibg2hTAIs") class="clip">
+			<div>
+				<img src="img/kayClip2.jpg"/>
+			</div>
+			<div class="noscroll">
+				<p>Kay - First Try!</p>
+			</div>
+		</button>
+		<button onclick=window.open("https://www.twitch.tv/kaaaay/clip/ExpensiveAbrasivePepperHotPokket-RTV2daUVGXOF8s1C") class="clip">
+			<div>
+				<img src="img/kayClip3.jpg"/>
+			</div>
+			<div class="noscroll">
+				<p>Kay - WTF :D</p>
+			</div>
+		</button>
+		<button onclick=window.open("https://www.twitch.tv/gato_live/clip/WildWealthyCrabsPlanking") class="clip">
+			<div>
+				<img src="img/gatoClip1.jpg"/>
+			</div>
+			<div class="noscroll">
+				<marquee behavior="" direction="left">GaTo - "OMG dieser shot".... ist zwar nur ein rhino :)</marquee>
+			</div>
+		</button>
+		<button onclick=window.open("https://www.twitch.tv/kaaaay/clip/FilthySweetConsole4Head-5tq-DEbswsbkRduD") class="clip">
+			<div>
+				<img src="img/kayClip1.jpg"/>
+			</div>
+			<div class="noscroll"> 
+				<p>Kay - Ups</p>
+			</div>
+		</button>
+		<button onclick=window.open("https://www.twitch.tv/kaaaay/clip/MildThoughtfulCaribouGivePLZ--a1uaJBibg2hTAIs") class="clip">
+			<div>
+				<img src="img/kayClip2.jpg"/>
+			</div>
+			<div class="noscroll">
+				<p>Kay - First Try!</p>
+			</div>
+		</button>
+		<button onclick=window.open("https://www.twitch.tv/kaaaay/clip/ExpensiveAbrasivePepperHotPokket-RTV2daUVGXOF8s1C") class="clip">
+			<div>
+				<img src="img/kayClip3.jpg"/>
+			</div>
+			<div class="noscroll">
+				<p>Kay - WTF :D</p>
+			</div>
+		</button>
 	</body>
 </html>
