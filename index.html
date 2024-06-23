@@ -2,36 +2,56 @@
 <html>
 	<head>
 		<title>Ark Quest - Start</title>
+		<link href='https://fonts.googleapis.com/css?family=Passion One' rel='stylesheet'>
 		<style type="text/css">
 			body {
-				background-image: url("img/standard.gif");
-				background-position: center;
-				background-repeat: no-repeat;
-				background-size: cover;
-				background-attachment: fixed;
+				font-family: 'Passion One';
 			}
-
+			
 			video {
 				width: 100vw;
 				height: 100vh;
 				object-fit: cover;
 				position: fixed;
-				
 				left: 0;
 				right: 0;
 				top: 0;
 				bottom: 0;
-				z-index: -100;
+				z-index: -1;
 			}
-			
+
+			* {
+				box-sizing: border-box;
+			}
+
+			.flex-container {
+				display: flex;
+				flex-wrap: wrap;
+				text-align: center;
+			}
+
+			.flex-item-left, .flex-item-right {
+				border-radius: 50px;
+				flex: 45%;
+				color: white;
+				font-size: 65px;
+				text-shadow: 5px 5px 5px black;
+			}
+
+			@media (max-width: 900px) {
+				.flex-item-half, .flex-item-half {
+					flex: 100%;
+				}
+			}
+
 		</style>
 	</head>
 	<body>
-		
+
 		<video autoplay loop muted>
 			<source src="img/bgVid.mp4" type="video/mp4">
 		</video>
-		
+
 		<nav>
 			<button type="button" disabled="true" class="present">Start</button>
 			<button type="button" onclick="window.location.href='teams.html'" class="target">Teams</button>
@@ -39,5 +59,16 @@
 			<button type="button" onclick="window.location.href='aufgaben.html'" class="target">Aufgaben</button>
 			<button type="button" onclick="window.location.href='highlights.html'" class="target">Highlights</button>
 		</nav>
+		
+		<div class="flex-container">
+			<div class="flex-item-left">
+				Hier steht bald ein Erklärungstext
+			</div>
+			<div class="flex-item-right">
+				Das ist die Map "The Center"
+				<img src="img/centerMap.png"/>
+			</div>
+		</div>
+		
 	</body>
 </html>

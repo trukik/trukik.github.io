@@ -5,12 +5,6 @@
 		<link href='https://fonts.googleapis.com/css?family=Passion One' rel='stylesheet'>
 		<style type="text/css">
 			body {
-				background-image: url("img/standard.gif");
-				height: 1200px;
-				background-position: center;
-				background-repeat: no-repeat;
-				background-size: cover;
-				background-attachment: fixed;
 				font-family: 'Passion One';
 			}
 
@@ -56,12 +50,18 @@
 				height: 100vh;
 				object-fit: cover;
 				position: fixed;
-				
 				left: 0;
 				right: 0;
 				top: 0;
 				bottom: 0;
 				z-index: -100;
+			}
+			
+			.headline {
+				color: white;
+				font-size: 120px;
+				text-shadow: 5px 5px 5px black;
+				text-align: center;
 			}
 
 		</style>
@@ -93,6 +93,8 @@
 			<button type="button" disabled="true" class="present">Highlights</button>
 		</nav>
 	
+		<div class="headline">Highlights</div>
+		
 		<button onclick=window.open("https://www.twitch.tv/gato_live/clip/WildWealthyCrabsPlanking") class="clip">
 			<div>
 				<img src="img/gatoClip1.jpg"/>

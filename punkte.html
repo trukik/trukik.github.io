@@ -2,15 +2,12 @@
 <html>
 	<head>
 		<title>Ark Quest - Punktestand</title>
+		<link href='https://fonts.googleapis.com/css?family=Passion One' rel='stylesheet'>
 		<style type="text/css">
 			body {
-				background-image: url("img/standard.gif");
-				height: 1200px;
-				background-position: center;
-				background-repeat: no-repeat;
-				background-size: cover;
+				font-family: 'Passion One';
 			}
-
+			
 			* {
 				box-sizing: border-box;
 			}
@@ -35,11 +32,7 @@
 
 			.flex-item-red, .flex-item-green, .flex-item-blue {
 				background-image: url("img/scale.png");
-				background-position-y: 6px;
-				/*
-				background-repeat: no-repeat;
-				background-size: cover;
-				*/
+				background-position-y: 71px;
 				padding: 5px;
 				flex: 30%;
 				color: white;
@@ -48,13 +41,10 @@
 
 			.flex-item-score {
 				background-image: url("img/scale.png");
-				background-position-y: 6px;
-				/*
-				background-repeat: no-repeat;
-				background-size: cover;
-				*/
+				background-position-y: 71px;
 				padding: 5px;
 				flex: 10%;
+				font-size: 60px;
 				background-color: rgba(255, 255, 255, 0.65);
 			}
 
@@ -157,6 +147,13 @@
 				bottom: 0;
 				z-index: -100;
 			}
+			
+			.headline {
+				color: white;
+				font-size: 120px;
+				text-shadow: 5px 5px 5px black;
+				text-align: center;
+			}
 
 		</style>
 	</head>
@@ -173,17 +170,23 @@
 			<button type="button" onclick="window.location.href='aufgaben.html'" class="target">Aufgaben</button>
 			<button type="button" onclick="window.location.href='highlights.html'" class="target">Highlights</button>
 		</nav>
+		
+		<div class="headline">
+			Punktestand
+		</div>
 
 		<div class="flex-container">
 			<!--Display Score Steps-->
 			<div class="flex-item-score">
-				<div class="scorebox" style=" background-color: orange; height: 300px;">Questline</div>
-				<div class="scorebox" style=" background-color: teal; height: 300px;">Aufgaben</div>
-				<div class="scorebox" style=" background-color: dodgerblue; height: 300px;">Events</div>
+				PUNKTE
+				<div class="scorebox" style=" background-color: orange; height: 300px; writing-mode: vertical-lr; text-orientation: upright; font-size: 30px; line-height: 1;">Questline</div>
+				<div class="scorebox" style=" background-color: teal; height: 300px; writing-mode: vertical-lr; text-orientation: upright; font-size: 30px;">Aufgaben</div>
+				<div class="scorebox" style=" background-color: dodgerblue; height: 300px; writing-mode: vertical-lr; text-orientation: upright; font-size: 30px;">Events</div>
 				<div class="scorebox" style=" height: 180px;"></div>
 			</div>
 			<!--Display Score Team red-->
 			<div class="flex-item-red">
+				TEAM ROT
 				<div class="scorebox sbrb"></div>
 				<div class="scorebox sbrq"></div>
 				<div class="scorebox sbra"></div>
@@ -192,6 +195,7 @@
 			</div>
 			<!--Display Score Team green-->
 			<div class="flex-item-green">
+				TEAM GRÜN
 				<div class="scorebox sbgb"></div>
 				<div class="scorebox sbgq"></div>
 				<div class="scorebox sbga"></div>
@@ -200,6 +204,7 @@
 			</div>
 			<!--Display Score Team blue-->
 			<div class="flex-item-blue">
+				TEAM BLAU
 				<div class="scorebox sbbb"></div>
 				<div class="scorebox sbbq"></div>
 				<div class="scorebox sbba"></div>
