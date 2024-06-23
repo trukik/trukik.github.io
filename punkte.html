@@ -65,28 +65,23 @@
 
 			/*q,a,e muss zusammen 900 ergeben, 900 ist die Höhe ganzen Skala*/
 			:root {
-				--qRed: 500;
-				--aRed: 500;
-				--eRed: 500;
+				--qRed: 0.8;
+				--aRed: 0.9;
+				--eRed: 0.2;
 
-				--qGreen: 300;
-				--aGreen: 300;
-				--eGreen: 300;
+				--qGreen: 1.0;
+				--aGreen: 0.75;
+				--eGreen: 0.4;
 
-				--qBlue: 0;
-				--aBlue: 0;
-				--eBlue: 0;
-
-				--rBuffer: 150px;
-				--gBuffer: 150px;
-				--bBuffer: 150px;
-				--sBuffer: 150px;
+				--qBlue: 0.3;
+				--aBlue: 0.1;
+				--eBlue: 0.4;
 			}
 
 
 			/*Scoreboard points styles and resizes*/
 			.pb {
-				width: var(--sBuffer);
+				width: 1vw;
 			}
 			.pblock {
 				width: 24vw;
@@ -94,53 +89,52 @@
 
 			/*Scoreboard red styles and resizes*/
 			.sbrb {
-				width: var(--rBuffer);
-				data-score: "20";
+				width: 1vw;
 			}
 			.sbrq {
-				width: calc(0px + (var(--qRed) * 1px));
+				width: calc(24vw * var(--qRed));
 				background-color: orange;
 			}
 			.sbra {
-				width: calc(0px + (var(--aRed) * 1px));
+				width: calc(24vw * var(--aRed));
 				background-color: teal;
 			}
 			.sbre {
-				width: calc(0px + (var(--eRed) * 1px));
+				width: calc(24vw * var(--eRed));
 				background-color: dodgerblue;
 			}
 
 			/*Scoreboard green styles and resizes*/
 			.sbgb {
-				width: var(--gBuffer);
+				width: 1vw;
 			}
 			.sbgq {
-				width: calc(0px + var(--qGreen) * 1px);
+				width: calc(24vw * var(--qGreen));
 				background-color: orange;
 			}
 			.sbga {
-				width: calc(0px + var(--aGreen) * 1px);
+				width: calc(24vw * var(--aGreen));
 				background-color: teal;
 			}
 			.sbge {
-				width: calc(0px + var(--eGreen) * 1px);
+				width: calc(24vw * var(--eGreen));
 				background-color: dodgerblue;
 			}
 
 			/*Scoreboard blue styles and resizes*/
 			.sbbb {
-				width: var(--bBuffer);
+				width: 1vw;
 			}
 			.sbbq {
-				width: calc(0px + var(--qBlue)*1px);
+				width: calc(24vw * var(--qBlue));
 				background-color: orange;
 			}
 			.sbba {
-				width: calc(0px + var(--aBlue)*1px);
+				width: calc(24vw * var(--aBlue));
 				background-color: teal;
 			}
 			.sbbe {
-				width: calc(0px + var(--eBlue)*1px);
+				width: calc(24vw * var(--eBlue));
 				background-color: dodgerblue;
 			}
 
@@ -159,7 +153,7 @@
 				margin-bottom: 15px;
 				float: left;
 				height: 70px;
-				width: 15vw;
+				width: 18vw;
 				text-align: middle;
 			}
 
