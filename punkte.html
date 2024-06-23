@@ -3,19 +3,51 @@
 	<head>
 		<title>Ark Quest - Punktestand</title>
 		<link href='https://fonts.googleapis.com/css?family=Passion One' rel='stylesheet'>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+		<script>
+			$(document).ready(function () {
+				let maxQ= 200;
+				let maxA= 200;
+				let maxE= 200;
+				$(".sbrq").text(Math.round($(".sbrq").width()/$(".pblock").width() * maxQ ));
+				$(".sbra").text(Math.round($(".sbra").width()/$(".pblock").width() * maxA ));
+				$(".sbre").text(Math.round($(".sbre").width()/$(".pblock").width() * maxE ));
+				$(".sbgq").text(Math.round($(".sbgq").width()/$(".pblock").width() * maxQ ));
+				$(".sbga").text(Math.round($(".sbga").width()/$(".pblock").width() * maxA ));
+				$(".sbge").text(Math.round($(".sbge").width()/$(".pblock").width() * maxE ));
+				$(".sbbq").text(Math.round($(".sbbq").width()/$(".pblock").width() * maxQ ));
+				$(".sbba").text(Math.round($(".sbba").width()/$(".pblock").width() * maxA ));
+				$(".sbbe").text(Math.round($(".sbbe").width()/$(".pblock").width() * maxE ));
+			});
+
+		</script>
 		<style type="text/css">
 			body {
 				font-family: 'Passion One';
 			}
-			
+
 			* {
 				box-sizing: border-box;
 			}
 
 			.flex-container {
-				display: flex;
-				flex-wrap: wrap;
+				width: 98vw;
 				text-align: center;
+			}
+
+			.flex-item-red, .flex-item-green, .flex-item-blue, .flex-item-score {
+				margin: 1vw;
+				border-radius: 25px;
+				height: 100px;
+				font-size: 60px;
+			}
+
+			.flex-item-red, .flex-item-green, .flex-item-blue {
+				color: white;
+			}
+
+			.flex-item-score {
+				background-color: rgba(255, 255, 255, 0.65);
 			}
 
 			.flex-item-red {
@@ -30,124 +62,119 @@
 				background-color: rgba(0, 0, 128, 0.65);
 			}
 
-			.flex-item-red, .flex-item-green, .flex-item-blue {
-				background-image: url("img/scale.png");
-				background-position-y: 71px;
-				padding: 5px;
-				flex: 30%;
-				color: white;
-				font-size: 60px;
-			}
-
-			.flex-item-score {
-				background-image: url("img/scale.png");
-				background-position-y: 71px;
-				padding: 5px;
-				flex: 10%;
-				font-size: 60px;
-				background-color: rgba(255, 255, 255, 0.65);
-			}
 
 			/*q,a,e muss zusammen 900 ergeben, 900 ist die Höhe ganzen Skala*/
 			:root {
-				--qRed: 20;
-				--aRed: 50;
-				--eRed: 100;
+				--qRed: 500;
+				--aRed: 500;
+				--eRed: 500;
+
 				--qGreen: 300;
 				--aGreen: 300;
 				--eGreen: 300;
-				--qBlue: 50;
-				--aBlue: 50;
-				--eBlue: 50;
+
+				--qBlue: 0;
+				--aBlue: 0;
+				--eBlue: 0;
+
+				--rBuffer: 150px;
+				--gBuffer: 150px;
+				--bBuffer: 150px;
+				--sBuffer: 150px;
 			}
 
-			@media (max-width: 900px) {
-				.flex-item-score, .flex-item-red, .flex-item-green, .flex-item-blue {
-					flex: 100%;
-				}
+
+			/*Scoreboard points styles and resizes*/
+			.pb {
+				width: var(--sBuffer);
+			}
+			.pblock {
+				width: 24vw;
 			}
 
 			/*Scoreboard red styles and resizes*/
 			.sbrb {
-				height: calc(900px - (var(--qRed) + var(--aRed) + var(--eRed))*1px);
+				width: var(--rBuffer);
+				data-score: "20";
 			}
 			.sbrq {
-				height: calc(0px + (var(--qRed) * 1px));
+				width: calc(0px + (var(--qRed) * 1px));
 				background-color: orange;
 			}
 			.sbra {
-				height: calc(0px + (var(--aRed) * 1px));
+				width: calc(0px + (var(--aRed) * 1px));
 				background-color: teal;
 			}
 			.sbre {
-				height: calc(0px + (var(--eRed) * 1px));
+				width: calc(0px + (var(--eRed) * 1px));
 				background-color: dodgerblue;
 			}
-			.sbgf {
-				height: 180px;
-			}
+
 			/*Scoreboard green styles and resizes*/
 			.sbgb {
-				height: calc(900px - (var(--qGreen) + var(--aGreen) + var(--eGreen))*1px);
+				width: var(--gBuffer);
 			}
 			.sbgq {
-				height: calc(0px + var(--qGreen) * 1px);
+				width: calc(0px + var(--qGreen) * 1px);
 				background-color: orange;
 			}
 			.sbga {
-				height: calc(0px + var(--aGreen) * 1px);
+				width: calc(0px + var(--aGreen) * 1px);
 				background-color: teal;
 			}
 			.sbge {
-				height: calc(0px + var(--eGreen) * 1px);
+				width: calc(0px + var(--eGreen) * 1px);
 				background-color: dodgerblue;
 			}
-			.sbgf {
-				height: 180px;
-			}
+
 			/*Scoreboard blue styles and resizes*/
 			.sbbb {
-				height: calc(900px - (var(--qBlue) + var(--aBlue) + var(--eBlue)) * 1px);
+				width: var(--bBuffer);
 			}
 			.sbbq {
-				height: calc(0px + var(--qBlue)*1px);
+				width: calc(0px + var(--qBlue)*1px);
 				background-color: orange;
 			}
 			.sbba {
-				height: calc(0px + var(--aBlue)*1px);
+				width: calc(0px + var(--aBlue)*1px);
 				background-color: teal;
 			}
 			.sbbe {
-				height: calc(0px + var(--eBlue)*1px);
+				width: calc(0px + var(--eBlue)*1px);
 				background-color: dodgerblue;
 			}
-			.sbgf {
-				height: 180px;
-			}
-	
-			
-			.scorebox {
-				width: 50%;
-				hieght: 10px;
-				margin-left: 25%;
+
+			.scorebox, .scoreboxfinal {
+				margin-top: 15px;
+				margin-bottom: 15px;
+				float: left;
+				height: 70px;
 				border-size: 1px;
 				border-color: black;
 				text-align: middle;
 			}
-			
+
+			.kategorie {
+				margin-top: 15px;
+				margin-bottom: 15px;
+				float: left;
+				height: 70px;
+				width: 15vw;
+				text-align: middle;
+			}
+
 			video {
 				width: 100vw;
 				height: 100vh;
 				object-fit: cover;
 				position: fixed;
-				
 				left: 0;
 				right: 0;
 				top: 0;
 				bottom: 0;
 				z-index: -100;
 			}
-			
+
 			.headline {
 				color: white;
 				font-size: 120px;
@@ -158,19 +185,19 @@
 		</style>
 	</head>
 	<body>
-		
+
 		<video autoplay loop muted poster="img/bgImg.png">
 			<source src="img/bgVid.mp4" type="video/mp4">
 		</video>
-		
+
 		<nav>
-			<button type="button" onclick="window.location.href='index.html'" class="target">Start</button>
-			<button type="button" onclick="window.location.href='teams.html'" class="target">Teams</button>
+			<button type="button" onclick="window.location.href = 'index.html'" class="target">Start</button>
+			<button type="button" onclick="window.location.href = 'teams.html'" class="target">Teams</button>
 			<button type="button" disabled="true" class="present">Punkte</button>
-			<button type="button" onclick="window.location.href='aufgaben.html'" class="target">Aufgaben</button>
-			<button type="button" onclick="window.location.href='highlights.html'" class="target">Highlights</button>
+			<button type="button" onclick="window.location.href = 'aufgaben.html'" class="target">Aufgaben</button>
+			<button type="button" onclick="window.location.href = 'highlights.html'" class="target">Highlights</button>
 		</nav>
-		
+
 		<div class="headline">
 			Punktestand
 		</div>
@@ -178,38 +205,35 @@
 		<div class="flex-container">
 			<!--Display Score Steps-->
 			<div class="flex-item-score">
-				PUNKTE
-				<div class="scorebox" style=" background-color: orange; height: 300px; writing-mode: vertical-lr; text-orientation: upright; font-size: 30px; line-height: 1;">Questline</div>
-				<div class="scorebox" style=" background-color: teal; height: 300px; writing-mode: vertical-lr; text-orientation: upright; font-size: 30px;">Aufgaben</div>
-				<div class="scorebox" style=" background-color: dodgerblue; height: 300px; writing-mode: vertical-lr; text-orientation: upright; font-size: 30px;">Events</div>
-				<div class="scorebox" style=" height: 180px;"></div>
+				<div class="kategorie">PUNKTE</div>
+				<div class="scoreboxfinal pb"></div>
+				<div class="scoreboxfinal pblock" class="scorebox" style=" background-color: orange">Questline</div>
+				<div class="scoreboxfinal pblock" class="scorebox" style=" background-color: teal">Aufgaben</div>
+				<div class="scoreboxfinal pblock" class="scorebox" style=" background-color: dodgerblue">Events</div>
 			</div>
 			<!--Display Score Team red-->
 			<div class="flex-item-red">
-				TEAM ROT
-				<div class="scorebox sbrb"></div>
-				<div class="scorebox sbrq"></div>
-				<div class="scorebox sbra"></div>
-				<div class="scorebox sbre"></div>
-				<div class="scorebox sbrf"></div>
+				<div class="kategorie">TEAM ROT</div>
+				<div class="scoreboxfinal sbrb"></div>
+				<div id="score" class="scorebox sbrq"></div>
+				<div id="score" class="scorebox sbra"></div>
+				<div id="score" class="scorebox sbre"></div>
 			</div>
 			<!--Display Score Team green-->
 			<div class="flex-item-green">
-				TEAM GRÜN
-				<div class="scorebox sbgb"></div>
-				<div class="scorebox sbgq"></div>
-				<div class="scorebox sbga"></div>
-				<div class="scorebox sbge"></div>
-				<div class="scorebox sbgf"></div>
+				<div class="kategorie">TEAM GRÜN</div>
+				<div class="scoreboxfinal sbgb"></div>
+				<div id="score" class="scorebox sbgq"></div>
+				<div id="score" class="scorebox sbga"></div>
+				<div id="score" class="scorebox sbge"></div>
 			</div>
 			<!--Display Score Team blue-->
 			<div class="flex-item-blue">
-				TEAM BLAU
-				<div class="scorebox sbbb"></div>
-				<div class="scorebox sbbq"></div>
-				<div class="scorebox sbba"></div>
-				<div class="scorebox sbbe"></div>
-				<div class="scorebox sbbf"></div>
+				<div class="kategorie">TEAM BLAU</div>
+				<div class="scoreboxfinal sbbb"></div>
+				<div id="score" class="scorebox sbbq">0</div>
+				<div id="score" class="scorebox sbba">0</div>
+				<div id="score" class="scorebox sbbe">0</div>
 			</div>
 		</div>
 	</body>
