@@ -6,18 +6,18 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 		<script>
 			$(document).ready(function () {
-				let maxQ= 200;
-				let maxA= 200;
-				let maxE= 200;
-				$(".sbrq").text(Math.round($(".sbrq").width()/$(".pblock").width() * maxQ ));
-				$(".sbra").text(Math.round($(".sbra").width()/$(".pblock").width() * maxA ));
-				$(".sbre").text(Math.round($(".sbre").width()/$(".pblock").width() * maxE ));
-				$(".sbgq").text(Math.round($(".sbgq").width()/$(".pblock").width() * maxQ ));
-				$(".sbga").text(Math.round($(".sbga").width()/$(".pblock").width() * maxA ));
-				$(".sbge").text(Math.round($(".sbge").width()/$(".pblock").width() * maxE ));
-				$(".sbbq").text(Math.round($(".sbbq").width()/$(".pblock").width() * maxQ ));
-				$(".sbba").text(Math.round($(".sbba").width()/$(".pblock").width() * maxA ));
-				$(".sbbe").text(Math.round($(".sbbe").width()/$(".pblock").width() * maxE ));
+				let maxQ = 200;
+				let maxA = 200;
+				let maxE = 200;
+				$(".sbrq").text(Math.round($(".sbrq").width() / $(".pblock").width() * maxQ));
+				$(".sbra").text(Math.round($(".sbra").width() / $(".pblock").width() * maxA));
+				$(".sbre").text(Math.round($(".sbre").width() / $(".pblock").width() * maxE));
+				$(".sbgq").text(Math.round($(".sbgq").width() / $(".pblock").width() * maxQ));
+				$(".sbga").text(Math.round($(".sbga").width() / $(".pblock").width() * maxA));
+				$(".sbge").text(Math.round($(".sbge").width() / $(".pblock").width() * maxE));
+				$(".sbbq").text(Math.round($(".sbbq").width() / $(".pblock").width() * maxQ));
+				$(".sbba").text(Math.round($(".sbba").width() / $(".pblock").width() * maxA));
+				$(".sbbe").text(Math.round($(".sbbe").width() / $(".pblock").width() * maxE));
 			});
 
 		</script>
@@ -39,7 +39,6 @@
 				margin: 1vw;
 				border-radius: 25px;
 				height: 100px;
-				font-size: 60px;
 			}
 
 			.flex-item-red, .flex-item-green, .flex-item-blue {
@@ -62,9 +61,25 @@
 				background-color: rgba(0, 0, 128, 0.65);
 			}
 
+			@media screen and (min-width: 900px) {
+				.scorebox, .scoreboxfinal, .kategorie {
+					font-size: calc(16px + (70 - 16) * ((100vw - 900px) / (1750 - 900)));
+				}
+			}
 
-			/*q,a,e muss zusammen 900 ergeben, 900 ist die Höhe ganzen Skala*/
-			:root {
+			@media screen and (min-width: 1750px) {
+				.scorebox, .scoreboxfinal, .kategorie {
+					font-size: 70px;
+				}
+			}
+
+			@media (max-width: 900px) {
+				.scorebox, .scoreboxfinal, .kategorie {
+					font-size: 70px;
+				}
+			}
+			
+			:root { /*q,a,e muss zusammen 900 ergeben, 900 ist die Höhe ganzen Skala*/
 				--qRed: 0.8;
 				--aRed: 0.9;
 				--eRed: 0.2;
@@ -77,18 +92,15 @@
 				--aBlue: 0.1;
 				--eBlue: 0.4;
 			}
-
-
-			/*Scoreboard points styles and resizes*/
-			.pb {
+			
+			.pb { /*Scoreboard points styles and resizes*/
 				width: 1vw;
 			}
 			.pblock {
 				width: 24vw;
 			}
-
-			/*Scoreboard red styles and resizes*/
-			.sbrb {
+			
+			.sbrb { /*Scoreboard red styles and resizes*/
 				width: 1vw;
 			}
 			.sbrq {
@@ -103,9 +115,8 @@
 				width: calc(24vw * var(--eRed));
 				background-color: dodgerblue;
 			}
-
-			/*Scoreboard green styles and resizes*/
-			.sbgb {
+			
+			.sbgb { /*Scoreboard green styles and resizes*/
 				width: 1vw;
 			}
 			.sbgq {
@@ -120,9 +131,8 @@
 				width: calc(24vw * var(--eGreen));
 				background-color: dodgerblue;
 			}
-
-			/*Scoreboard blue styles and resizes*/
-			.sbbb {
+			
+			.sbbb { /*Scoreboard blue styles and resizes*/
 				width: 1vw;
 			}
 			.sbbq {
@@ -176,6 +186,40 @@
 				text-align: center;
 			}
 
+			.target, .present {
+				width: 100%;
+				height: 100%;
+				border-radius: 10px;
+				font-family: 'Passion One';
+				font-size: 200%;
+				border-color: black;
+				border-style: solid;
+				border-size: 2px;
+			}
+
+			.target {
+				background-color: lightgrey;
+			}
+
+			.target:hover {
+				background-color: rgb(80, 80, 80);
+				color: white;
+				transition: 0.5s;
+			}
+
+			.menu {
+				/**
+				width: 25%;
+				height: 40px;
+				margin: 0.5%;
+				/**/
+				width: 19%;
+				height: 40px;
+				margin: 0.5%;
+				float: left;
+				/**/
+			}
+
 		</style>
 	</head>
 	<body>
@@ -184,13 +228,13 @@
 			<source src="img/bgVid.mp4" type="video/mp4">
 		</video>
 
-		<nav>
-			<button type="button" onclick="window.location.href = 'index.html'" class="target">Start</button>
-			<button type="button" onclick="window.location.href = 'teams.html'" class="target">Teams</button>
-			<button type="button" disabled="true" class="present">Punkte</button>
-			<button type="button" onclick="window.location.href = 'aufgaben.html'" class="target">Aufgaben</button>
-			<button type="button" onclick="window.location.href = 'highlights.html'" class="target">Highlights</button>
-		</nav>
+		<div>
+			<div class="menu"><button type="button" onclick="window.location.href = 'index.html'" class="target">Start</button></div>
+			<div class="menu"><button type="button" onclick="window.location.href = 'teams.html'" class="target">Teams</button></div>
+			<div class="menu"><button type="button" disabled="true" class="present">Punkte</button></div>
+			<div class="menu"><button type="button" onclick="window.location.href = 'aufgaben.html'" class="target">Aufgaben</button></div>
+			<div class="menu"><button type="button" onclick="window.location.href = 'highlights.html'" class="target">Highlights</button></div>
+		</div>
 
 		<div class="headline">
 			Punktestand
@@ -201,9 +245,9 @@
 			<div class="flex-item-score">
 				<div class="kategorie">PUNKTE</div>
 				<div class="scoreboxfinal pb"></div>
-				<div class="scoreboxfinal pblock" class="scorebox" style=" background-color: orange">Questline</div>
-				<div class="scoreboxfinal pblock" class="scorebox" style=" background-color: teal">Aufgaben</div>
-				<div class="scoreboxfinal pblock" class="scorebox" style=" background-color: dodgerblue">Events</div>
+				<div class="scoreboxfinal pblock" class="scorebox" style="     background-color: orange">Questline</div>
+				<div class="scoreboxfinal pblock" class="scorebox" style="     background-color: teal">Aufgaben</div>
+				<div class="scoreboxfinal pblock" class="scorebox" style="     background-color: dodgerblue">Events</div>
 			</div>
 			<!--Display Score Team red-->
 			<div class="flex-item-red">

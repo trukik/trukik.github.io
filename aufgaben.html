@@ -7,8 +7,8 @@
 			body {
 				font-family: 'Passion One';
 			}
-			
-			div {
+
+			.text {
 				font-size: 100px;
 				color: white;
 				text-align: center;
@@ -24,12 +24,46 @@
 				height: 100vh;
 				object-fit: cover;
 				position: fixed;
-				
+
 				left: 0;
 				right: 0;
 				top: 0;
 				bottom: 0;
 				z-index: -100;
+			}
+
+			.target, .present {
+				width: 100%;
+				height: 100%;
+				border-radius: 10px;
+				font-family: 'Passion One';
+				font-size: 200%;
+				border-color: black;
+				border-style: solid;
+				border-size: 2px;
+			}
+
+			.target {
+				background-color: lightgrey;
+			}
+
+			.target:hover {
+				background-color: rgb(80, 80, 80);
+				color: white;
+				transition: 0.5s;
+			}
+
+			.menu {
+				/**
+				width: 25%;
+				height: 40px;
+				margin: 0.5%;
+				/**/
+				width: 19%;
+				height: 40px;
+				margin: 0.5%;
+				float: left;
+				/**/
 			}
 
 		</style>
@@ -40,15 +74,15 @@
 			<source src="img/bgVid.mp4" type="video/mp4">
 		</video>
 
-		<nav>
-			<button type="button" onclick="window.location.href='index.html'" class="target">Start</button>
-			<button type="button" onclick="window.location.href='teams.html'" class="target">Teams</button>
-			<button type="button" onclick="window.location.href='punkte.html'" class="target">Punkte</button>
-			<button type="button" disabled="true" class="present">Aufgaben</button>
-			<button type="button" onclick="window.location.href='highlights.html'" class="target">Highlights</button>
-		</nav>
-
-		<div>Zu erledigende Aufgaben</div>
+		<div>
+			<div class="menu"><button type="button" onclick="window.location.href = 'index.html'" class="target">Start</button></div>
+			<div class="menu"><button type="button" onclick="window.location.href = 'teams.html'" class="target">Teams</button></div>
+			<div class="menu"><button type="button" onclick="window.location.href='punkte.html'" class="target">Punkte</button></div>
+			<div class="menu"><button type="button" disabled="true" class="present">Aufgaben</button></div>
+			<div class="menu"><button type="button" onclick="window.location.href='highlights.html'" class="target">Highlights</button></div>
+		</div>
+		
+		<div class="text">Zu erledigende Aufgaben</div>
 
 	</body>
 </html>

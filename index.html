@@ -7,7 +7,7 @@
 			body {
 				font-family: 'Passion One';
 			}
-			
+
 			video {
 				width: 100vw;
 				height: 100vh;
@@ -43,11 +43,53 @@
 					flex: 100%;
 				}
 			}
-			
+
 			.intmap {
 				width: 75%;
 				height: auto;
 				border: 2px solid black;
+			}
+
+			.target, .present {
+				width: 100%;
+				height: 100%;
+				border-radius: 10px;
+				font-family: 'Passion One';
+				font-size: 200%;
+				border-color: black;
+				border-style: solid;
+				border-size: 2px;
+			}
+
+			.target {
+				background-color: lightgrey;
+			}
+
+			.target:hover {
+				background-color: rgb(80, 80, 80);
+				color: white;
+				transition: 0.5s;
+			}
+
+			.menu {
+				/**
+				width: 25%;
+				height: 40px;
+				margin: 0.5%;
+				/**/
+				width: 19%;
+				height: 40px;
+				margin: 0.5%;
+				float: left;
+				/**/
+			}
+
+			.mainlogo {
+				width: 100%;
+				text-align: center;
+				font-size: 100px;
+				color: white;
+				text-shadow: 6px 6px 6px black;
 			}
 
 		</style>
@@ -58,14 +100,18 @@
 			<source src="img/bgVid.mp4" type="video/mp4">
 		</video>
 
-		<nav>
-			<button type="button" disabled="true" class="present">Start</button>
-			<button type="button" onclick="window.location.href='teams.html'" class="target">Teams</button>
-			<button type="button" onclick="window.location.href='punkte.html'" class="target">Punkte</button>
-			<button type="button" onclick="window.location.href='aufgaben.html'" class="target">Aufgaben</button>
-			<button type="button" onclick="window.location.href='highlights.html'" class="target">Highlights</button>
-		</nav>
-		
+		<div>
+			<div class="menu"><button type="button" disabled="true" class="present">Start</button></div>
+			<div class="menu"><button type="button" onclick="window.location.href = 'teams.html'" class="target">Teams</button></div>
+			<div class="menu"><button type="button" onclick="window.location.href='punkte.html'" class="target">Punkte</button></div>
+			<div class="menu"><button type="button" onclick="window.location.href = 'aufgaben.html'" class="target">Aufgaben</button></div>
+			<div class="menu"><button type="button" onclick="window.location.href = 'highlights.html'" class="target">Highlights</button></div>
+		</div>
+
+		<div class="mainlogo">
+		HIER SOLLTE IHR LOGO STEHEN
+		</div>
+
 		<div class="flex-container">
 			<div class="flex-item-left">
 				Hier steht bald ein Erklärungstext
@@ -75,6 +121,6 @@
 				<img class="intmap" src="img/centerMap.png"/>
 			</div>
 		</div>
-		
+
 	</body>
 </html>

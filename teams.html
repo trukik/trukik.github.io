@@ -7,7 +7,7 @@
       body {
         font-family: 'Passion One';
       }
-      
+
       * {
         box-sizing: border-box;
       }
@@ -46,7 +46,7 @@
 
       @media screen and (min-width: 900px) {
         .nameplate {
-          font-size: calc(18px + (50 - 18) * ((100vw - 900px) / (1750 - 900)));
+          font-size: calc(16px + (50 - 16) * ((100vw - 900px) / (1750 - 900)));
         }
       }
 
@@ -110,26 +110,52 @@
         margin-right: 10px;
       }
 
+      .target, .present {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        font-family: 'Passion One';
+        font-size: 200%;
+        border-color: black;
+        border-style: solid;
+        border-size: 2px;
+      }
+      
       .target {
-
+        background-color: lightgrey;
       }
 
       .target:hover {
-
+        background-color: rgb(80, 80, 80);
+        color: white;
+        transition: 0.5s;
       }
       
+      .menu {
+        /**
+        width: 25%;
+        height: 40px;
+        margin: 0.5%;
+        /**/
+        width: 19%;
+        height: 40px;
+        margin: 0.5%;
+        float: left;
+        /**/
+      }
+
       video {
-				width: 100vw;
-				height: 100vh;
-				object-fit: cover;
-				position: fixed;
-				left: 0;
-				right: 0;
-				top: 0;
-				bottom: 0;
-				z-index: -100;
-			}
-      
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: -100;
+      }
+
       .mainlogo {
         width: 100%;
         text-align: center;
@@ -141,22 +167,22 @@
     </style>
   </head>
   <body>
-    
+
     <video autoplay loop muted poster="img/bgImg.png">
-			<source src="img/bgVid.mp4" type="video/mp4">
-		</video>
-    
-    <nav>
-      <button type="button" onclick="window.location.href='index.html'" class="target">Start</button>
-      <button type="button" disabled="true" class="present">Teams</button>
-      <button type="button" onclick="window.location.href='punkte.html'" class="target">Punkte</button>
-      <button type="button" onclick="window.location.href='aufgaben.html'" class="target">Aufgaben</button>
-      <button type="button" onclick="window.location.href='highlights.html'" class="target">Highlights</button>
-    </nav>
+      <source src="img/bgVid.mp4" type="video/mp4">
+    </video>
+
+    <div>
+      <div class="menu"><button type="button" onclick="window.location.href='index.html'" class="target">Start</button></div>
+      <div class="menu"><button type="button" disabled="true" class="present">Teams</button></div>
+      <div class="menu"><button type="button" onclick="window.location.href='punkte.html'" class="target">Punkte</button></div>
+      <div class="menu"><button type="button" onclick="window.location.href='aufgaben.html'" class="target">Aufgaben</button></div>
+      <div class="menu"><button type="button" onclick="window.location.href='highlights.html'" class="target">Highlights</button></div>
+    </div>
 
     <div class="mainlogo">
-      HIER KÖNNTE IHR LOGO STEHEN
-    <div/>
+    HIER KÖNNTE IHR LOGO STEHEN
+    </div>
 
     <div class="flex-container">
       <!--Team 1-->
@@ -190,6 +216,10 @@
         <button type="button" onclick=window.open("https://www.twitch.tv/christhearrow") class="nameplate">
           <img src="img/chrisBanner.png" alt="ChrisTheArrow Banner" width="60" height="60" class="logo"/>ChrisTheArrow
         </button>
+        <!--player ChrizzPlay-->
+        <button type="button" onclick=window.open("https://www.twitch.tv/ChrizzPlay") class="nameplate">
+          <img src="img/chrizzplayBanner.png" alt="ChrizzPlay Banner" width="60" height="60" class="logo"/>ChrizzPlay
+        </button>
       </div>
       <!--Team 2-->
       <div class="flex-item-mid">
@@ -221,6 +251,10 @@
         <!--player xicanmeow-->
         <button type="button" onclick=window.open("https://www.twitch.tv/nekatus") class="nameplate">
           <img src="img/nekatusBanner.png" alt="nekatus Banner" width="60" height="60" class="logo"/>Nekatus
+        </button>
+        <!--player MrMoregame-->
+        <button type="button" onclick=window.open("https://www.twitch.tv/mrmoregame") class="nameplate">
+          <img src="img/mrmoreBanner.png" alt="MrMoregame Banner" width="60" height="60" class="logo"/>MrMoregame
         </button>
       </div>
       <!--Team 3-->
