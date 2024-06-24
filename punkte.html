@@ -37,8 +37,8 @@
 
 			.flex-item-red, .flex-item-green, .flex-item-blue, .flex-item-score {
 				margin: 1vw;
-				border-radius: 25px;
-				height: 100px;
+				border-radius: 4vw;
+				height: 10vw;
 			}
 
 			.flex-item-red, .flex-item-green, .flex-item-blue {
@@ -60,23 +60,9 @@
 			.flex-item-blue {
 				background-color: rgba(0, 0, 128, 0.65);
 			}
-
-			@media screen and (min-width: 900px) {
-				.scorebox, .scoreboxfinal, .kategorie {
-					font-size: calc(16px + (70 - 16) * ((100vw - 900px) / (1750 - 900)));
-				}
-			}
-
-			@media screen and (min-width: 1750px) {
-				.scorebox, .scoreboxfinal, .kategorie {
-					font-size: 70px;
-				}
-			}
-
-			@media (max-width: 900px) {
-				.scorebox, .scoreboxfinal, .kategorie {
-					font-size: 70px;
-				}
+			
+			.scorebox, .scoreboxfinal, .kategorie {
+				font-size: 3vw;
 			}
 			
 			:root { /*q,a,e muss zusammen 900 ergeben, 900 ist die Höhe ganzen Skala*/
@@ -92,14 +78,14 @@
 				--aBlue: 0.1;
 				--eBlue: 0.4;
 			}
-			
+
 			.pb { /*Scoreboard points styles and resizes*/
 				width: 1vw;
 			}
 			.pblock {
 				width: 24vw;
 			}
-			
+
 			.sbrb { /*Scoreboard red styles and resizes*/
 				width: 1vw;
 			}
@@ -115,7 +101,7 @@
 				width: calc(24vw * var(--eRed));
 				background-color: dodgerblue;
 			}
-			
+
 			.sbgb { /*Scoreboard green styles and resizes*/
 				width: 1vw;
 			}
@@ -131,7 +117,7 @@
 				width: calc(24vw * var(--eGreen));
 				background-color: dodgerblue;
 			}
-			
+
 			.sbbb { /*Scoreboard blue styles and resizes*/
 				width: 1vw;
 			}
@@ -149,22 +135,19 @@
 			}
 
 			.scorebox, .scoreboxfinal {
-				margin-top: 15px;
-				margin-bottom: 15px;
 				float: left;
-				height: 70px;
-				border-size: 1px;
-				border-color: black;
-				text-align: middle;
+				height: 50%;
+				margin-top: 2.5%;
+				padding-top: 0.75%;
+				vertical-align: center;
 			}
 
 			.kategorie {
-				margin-top: 15px;
-				margin-bottom: 15px;
 				float: left;
-				height: 70px;
+				height: 50%;
+				margin-top: 2.5%;
+				padding-top: 0.75%;
 				width: 18vw;
-				text-align: middle;
 			}
 
 			video {
@@ -181,20 +164,20 @@
 
 			.headline {
 				color: white;
-				font-size: 120px;
-				text-shadow: 5px 5px 5px black;
+				font-size: 20vw;
+				text-shadow: 1vw 1vw 1vw black;
 				text-align: center;
 			}
 
 			.target, .present {
 				width: 100%;
 				height: 100%;
-				border-radius: 10px;
+				border-radius: 5vw;
 				font-family: 'Passion One';
-				font-size: 200%;
+				font-size: 3vw;
 				border-color: black;
 				border-style: solid;
-				border-size: 2px;
+				border-size: 1vw;
 			}
 
 			.target {
@@ -208,16 +191,9 @@
 			}
 
 			.menu {
-				/**
-				width: 25%;
-				height: 40px;
-				margin: 0.5%;
-				/**/
 				width: 19%;
-				height: 40px;
 				margin: 0.5%;
 				float: left;
-				/**/
 			}
 
 		</style>
@@ -245,9 +221,9 @@
 			<div class="flex-item-score">
 				<div class="kategorie">PUNKTE</div>
 				<div class="scoreboxfinal pb"></div>
-				<div class="scoreboxfinal pblock" class="scorebox" style="     background-color: orange">Questline</div>
-				<div class="scoreboxfinal pblock" class="scorebox" style="     background-color: teal">Aufgaben</div>
-				<div class="scoreboxfinal pblock" class="scorebox" style="     background-color: dodgerblue">Events</div>
+				<div class="scoreboxfinal pblock" class="scorebox" style="background-color: orange">Questline</div>
+				<div class="scoreboxfinal pblock" class="scorebox" style="background-color: teal">Aufgaben</div>
+				<div class="scoreboxfinal pblock" class="scorebox" style="background-color: dodgerblue">Events</div>
 			</div>
 			<!--Display Score Team red-->
 			<div class="flex-item-red">
@@ -269,9 +245,9 @@
 			<div class="flex-item-blue">
 				<div class="kategorie">TEAM BLAU</div>
 				<div class="scoreboxfinal sbbb"></div>
-				<div id="score" class="scorebox sbbq">0</div>
-				<div id="score" class="scorebox sbba">0</div>
-				<div id="score" class="scorebox sbbe">0</div>
+				<div id="score" class="scorebox sbbq"></div>
+				<div id="score" class="scorebox sbba"></div>
+				<div id="score" class="scorebox sbbe"></div>
 			</div>
 		</div>
 	</body>

@@ -9,19 +9,31 @@
 			}
 
 			.clip {
-				width: 20%;
-				height: 20%;
-				margin: 25px;
-				border-radius: 15px;
+				width: 16vw;
+				height: 10vw;
+				margin: 1.5vw;
+				border-radius: 1vw;
 				overflow: hidden;
+			}
+			
+			.clip:hover {
+				width: 17vw;
+				height: 11vw;
+				margin: 1vw;
+				border-radius: 1vw;
+				overflow: hidden;
+			}
+			
+			img {
+				width: 11vw;
 			}
 
 			.noscroll {
 				font-family: 'Passion One';
-				font-size: 30px;
+				font-size: 1.5vw;
 				white-space: nowrap;
 				width: 100%;
-				height: 50px;  
+				height: 2vw;  
 				overflow: hidden;
 				position: relative;
 			}
@@ -31,13 +43,13 @@
 				width: 100%;
 				height: 100%;
 				margin: 0;
-				line-height: 50px;
+				line-height: 2vw;
 				text-align: center;
 			}
 
 			.noscroll marquee {
 				height: 100%;
-				line-height: 50px;
+				line-height: 2vw;
 				text-align: center;
 			}
 
@@ -55,20 +67,20 @@
 
 			.headline {
 				color: white;
-				font-size: 120px;
-				text-shadow: 5px 5px 5px black;
+				font-size: 10vw;
+				text-shadow: 1vw 1vw 1vw black;
 				text-align: center;
 			}
 
 			.target, .present {
 				width: 100%;
 				height: 100%;
-				border-radius: 10px;
+				border-radius: 5vw;
 				font-family: 'Passion One';
-				font-size: 200%;
+				font-size: 3vw;
 				border-color: black;
 				border-style: solid;
-				border-size: 2px;
+				border-size: 1vw;
 			}
 
 			.target {
@@ -82,32 +94,12 @@
 			}
 
 			.menu {
-				/**
-				width: 25%;
-				height: 40px;
-				margin: 0.5%;
-				/**/
 				width: 19%;
-				height: 40px;
 				margin: 0.5%;
 				float: left;
-				/**/
 			}
 
 		</style>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-		<script>
-			/*width, height of clip img*/
-			$(document).ready(function () {
-				$(".clip").hover(function () {
-						$(this).width($(this).width() + 50).height($(this).height() + 50);
-						$(this).css({"margin": "0px", "background-color": "purple", "border-color": "purple", "color": "white"});
-					}, function () {
-						$(this).width($(this).width() - 50).height($(this).height() - 50);
-						$(this).css({"margin": "25px", "background-color": "white", "border-color": "white", "color": "black"});
-					});
-			});
-		</script>
 	</head>
 	<body>
 
