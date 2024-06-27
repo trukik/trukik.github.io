@@ -8,15 +8,51 @@
 				font-family: 'Passion One';
 			}
 
-			.text {
-				font-size: 100px;
+			.clip {
+				width: 16vw;
+				height: 16vw;
+				margin: 3vw;
+				border-radius: 1vw;
+				overflow: hidden;
+				background-color: rgba(13,42,65,0.65);
 				color: white;
-				text-align: center;
-				text-shadow: 5px 5px 5px black;
+			}
+			
+			.clip:hover {
+				width: 18vw;
+				height: 18vw;
+				margin: 2vw;
+				border-radius: 1vw;
+				overflow: hidden;
+			}
+			
+			img {
+				width: 10vw;
 			}
 
-			li {
-				font-size: 75px;
+			.noscroll {
+				font-family: 'Passion One';
+				font-size: 2vw;
+				white-space: nowrap;
+				width: 100%;
+				height: 2vw;  
+				overflow: hidden;
+				position: relative;
+			}
+
+			.noscroll p {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				margin: 0;
+				line-height: 2vw;
+				text-align: center;
+			}
+
+			.noscroll marquee {
+				height: 100%;
+				line-height: 2vw;
+				text-align: center;
 			}
 
 			video {
@@ -24,12 +60,18 @@
 				height: 100vh;
 				object-fit: cover;
 				position: fixed;
-
 				left: 0;
 				right: 0;
 				top: 0;
 				bottom: 0;
 				z-index: -100;
+			}
+
+			.headline {
+				color: white;
+				font-size: 10vw;
+				text-shadow: 0.25vw 0.25vw 0.25vw black;
+				text-align: center;
 			}
 
 			.target, .present {
@@ -75,7 +117,103 @@
 			<div class="menu"><button type="button" onclick="window.location.href='highlights.html'" class="target">Highlights</button></div>
 		</div>
 
-		<div class="text">Zu erledigende Aufgaben</div>
+	<div class="headline">Aufgaben</div>
 
+		<button class="clip">
+			<div>
+				<img src="img/unknown.png"/>
+			</div>
+			<div class="noscroll">
+				<marquee behavior="" direction="left">Versteckte Aufgabe #01</marquee>
+			</div>
+		</button>
+		<button class="clip">
+			<div>
+				<img src="img/unknown.png"/>
+			</div>
+			<div class="noscroll">
+				<marquee behavior="" direction="left">Versteckte Aufgabe #02</marquee>
+			</div>
+		</button>
+		<button class="clip">
+			<div>
+				<img src="img/unknown.png"/>
+			</div>
+			<div class="noscroll">
+				<marquee behavior="" direction="left">Versteckte Aufgabe #03</marquee>
+			</div>
+		</button>
+		<button class="clip">
+			<div>
+				<img src="img/unknown.png"/>
+			</div>
+			<div class="noscroll">
+				<marquee behavior="" direction="left">Versteckte Aufgabe #04</marquee>
+			</div>
+		</button>
+		<button class="clip">
+			<div>
+				<img src="img/unknown.png"/>
+			</div>
+			<div class="noscroll">
+				<marquee behavior="" direction="left">Versteckte Aufgabe #05</marquee>
+			</div>
+		</button>
+		<button class="clip">
+			<div>
+				<img src="img/unknown.png"/>
+			</div>
+			<div class="noscroll">
+				<marquee behavior="" direction="left">Versteckte Aufgabe #06</marquee>
+			</div>
+		</button>
+		<button class="clip">
+			<div>
+				<img src="img/unknown.png"/>
+			</div>
+			<div class="noscroll">
+				<marquee behavior="" direction="left">Versteckte Aufgabe #07</marquee>
+			</div>
+		</button>
+		<button class="clip">
+			<div>
+				<img src="img/unknown.png"/>
+			</div>
+			<div class="noscroll">
+				<marquee behavior="" direction="left">Versteckte Aufgabe #08</marquee>
+			</div>
+		</button>
+		<button class="clip">
+			<div>
+				<img src="img/unknown.png"/>
+			</div>
+			<div class="noscroll">
+				<marquee behavior="" direction="left">Versteckte Aufgabe #09</marquee>
+			</div>
+		</button>
+		<button class="clip">
+			<div>
+				<img src="img/unknown.png"/>
+			</div>
+			<div class="noscroll">
+				<marquee behavior="" direction="left">Versteckte Aufgabe #10</marquee>
+			</div>
+		</button>
+		<button class="clip">
+			<div>
+				<img src="img/unknown.png"/>
+			</div>
+			<div class="noscroll">
+				<marquee behavior="" direction="left">Versteckte Aufgabe #11</marquee>
+			</div>
+		</button>
+		<button class="clip">
+			<div>
+				<img src="img/unknown.png"/>
+			</div>
+			<div class="noscroll">
+				<marquee behavior="" direction="left">Versteckte Aufgabe #12</marquee>
+			</div>
+		</button>
 	</body>
 </html>
