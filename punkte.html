@@ -4,23 +4,6 @@
 		<title>Ark Quest - Punktestand</title>
 		<link href='https://fonts.googleapis.com/css?family=Passion One' rel='stylesheet'>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-		<script>
-			$(document).ready(function () {
-				let maxQ = 200;
-				let maxA = 200;
-				let maxE = 200;
-				$(".sbrq").text(Math.round($(".sbrq").width() / $(".pblock").width() * maxQ));
-				$(".sbra").text(Math.round($(".sbra").width() / $(".pblock").width() * maxA));
-				$(".sbre").text(Math.round($(".sbre").width() / $(".pblock").width() * maxE));
-				$(".sbgq").text(Math.round($(".sbgq").width() / $(".pblock").width() * maxQ));
-				$(".sbga").text(Math.round($(".sbga").width() / $(".pblock").width() * maxA));
-				$(".sbge").text(Math.round($(".sbge").width() / $(".pblock").width() * maxE));
-				$(".sbbq").text(Math.round($(".sbbq").width() / $(".pblock").width() * maxQ));
-				$(".sbba").text(Math.round($(".sbba").width() / $(".pblock").width() * maxA));
-				$(".sbbe").text(Math.round($(".sbbe").width() / $(".pblock").width() * maxE));
-			});
-
-		</script>
 		<style type="text/css">
 			body {
 				font-family: 'Passion One';
@@ -60,11 +43,11 @@
 			.flex-item-blue {
 				background-color: rgba(0, 0, 128, 0.65);
 			}
-			
+
 			.scorebox, .scoreboxfinal, .kategorie {
 				font-size: 2vw;
 			}
-			
+
 			:root { /*q,a,e muss zusammen 900 ergeben, 900 ist die Höhe ganzen Skala*/
 				/*
 				--qRed: 0.8;
@@ -78,7 +61,7 @@
 				--qBlue: 0.3;
 				--aBlue: 0.1;
 				--eBlue: 0.4;
-				*/
+
 				--qRed: 0;
 				--aRed: 0;
 				--eRed: 0;
@@ -90,6 +73,7 @@
 				--qBlue: 0;
 				--aBlue: 0;
 				--eBlue: 0;
+				*/
 			}
 
 			.pb { /*Scoreboard points styles and resizes*/
@@ -99,19 +83,23 @@
 				width: 24vw;
 			}
 
+			.sbrq, .sbra, .sbre, .sbgq, .sbga, .sbge, .sbbq, .sbba, .sbbe {
+				width: 24vw;
+			}
+
 			.sbrb { /*Scoreboard red styles and resizes*/
 				width: 1vw;
 			}
 			.sbrq {
-				width: calc(24vw * var(--qRed));
+				/*width: calc(24vw * var(--qRed));*/
 				background-color: orange;
 			}
 			.sbra {
-				width: calc(24vw * var(--aRed));
+				/*width: calc(24vw * var(--aRed));*/
 				background-color: teal;
 			}
 			.sbre {
-				width: calc(24vw * var(--eRed));
+				/*width: calc(24vw * var(--eRed));*/
 				background-color: dodgerblue;
 			}
 
@@ -119,15 +107,15 @@
 				width: 1vw;
 			}
 			.sbgq {
-				width: calc(24vw * var(--qGreen));
+				/*width: calc(24vw * var(--qGreen));*/
 				background-color: orange;
 			}
 			.sbga {
-				width: calc(24vw * var(--aGreen));
+				/*width: calc(24vw * var(--aGreen));*/
 				background-color: teal;
 			}
 			.sbge {
-				width: calc(24vw * var(--eGreen));
+				/*width: calc(24vw * var(--eGreen));*/
 				background-color: dodgerblue;
 			}
 
@@ -135,15 +123,15 @@
 				width: 1vw;
 			}
 			.sbbq {
-				width: calc(24vw * var(--qBlue));
+				/*width: calc(24vw * var(--qBlue));*/
 				background-color: orange;
 			}
 			.sbba {
-				width: calc(24vw * var(--aBlue));
+				/*width: calc(24vw * var(--aBlue));*/
 				background-color: teal;
 			}
 			.sbbe {
-				width: calc(24vw * var(--eBlue));
+				/*width: calc(24vw * var(--eBlue));*/
 				background-color: dodgerblue;
 			}
 
@@ -190,7 +178,6 @@
 				font-size: 1.5vw;
 				border-color: black;
 				border-style: solid;
-				border-size: 1vw;
 			}
 
 			.target {
@@ -211,7 +198,8 @@
 
 		</style>
 	</head>
-	<body>
+	<body onload="fetchPoints(points)">
+
 
 		<video autoplay loop muted poster="img/bgImg.png">
 			<source src="img/bgVid.mp4" type="video/mp4">
@@ -234,34 +222,64 @@
 			<div class="flex-item-score">
 				<div class="kategorie">PUNKTE</div>
 				<div class="scoreboxfinal pb"></div>
-				<div class="scoreboxfinal pblock" class="scorebox" style="background-color: orange">Questline</div>
-				<div class="scoreboxfinal pblock" class="scorebox" style="background-color: teal">Aufgaben</div>
-				<div class="scoreboxfinal pblock" class="scorebox" style="background-color: dodgerblue">Wochen Challenge</div>
+				<div class="scoreboxfinal pblock" style="          background-color: orange">Questline</div>
+				<div class="scoreboxfinal pblock" style="          background-color: teal">Aufgaben</div>
+				<div class="scoreboxfinal pblock" style="          background-color: dodgerblue">Wochen Challenge</div>
 			</div>
 			<!--Display Score Team red-->
 			<div class="flex-item-red">
 				<div class="kategorie">TEAM ROT</div>
 				<div class="scoreboxfinal sbrb"></div>
-				<div id="score" class="scorebox sbrq"></div>
-				<div id="score" class="scorebox sbra"></div>
-				<div id="score" class="scorebox sbre"></div>
+				<div id="sbrq" class="scorebox sbrq"></div>
+				<div id="sbra" class="scorebox sbra"></div>
+				<div id="sbre" class="scorebox sbre"></div>
 			</div>
 			<!--Display Score Team green-->
 			<div class="flex-item-green">
 				<div class="kategorie">TEAM GRÜN</div>
 				<div class="scoreboxfinal sbgb"></div>
-				<div id="score" class="scorebox sbgq"></div>
-				<div id="score" class="scorebox sbga"></div>
-				<div id="score" class="scorebox sbge"></div>
+				<div id="sbgq" class="scorebox sbgq"></div>
+				<div id="sbga" class="scorebox sbga"></div>
+				<div id="sbge" class="scorebox sbge"></div>
 			</div>
 			<!--Display Score Team blue-->
 			<div class="flex-item-blue">
 				<div class="kategorie">TEAM BLAU</div>
 				<div class="scoreboxfinal sbbb"></div>
-				<div id="score" class="scorebox sbbq"></div>
-				<div id="score" class="scorebox sbba"></div>
-				<div id="score" class="scorebox sbbe"></div>
+				<div id="sbbq" class="scorebox sbbq"></div>
+				<div id="sbba" class="scorebox sbba"></div>
+				<div id="sbbe" class="scorebox sbbe"></div>
 			</div>
 		</div>
+
+		<script>
+					const points = [1, 9, 0, 154, 205, 200, 2, 0, 0, 154, 205, 200];
+					const tags = ["#sbgq", "#sbga", "#sbge", "#sbrq", "#sbra", "#sbre", "#sbbq", "#sbba", "#sbbe"];
+					function fetchPoints() {
+
+						fetch("http://94.250.204.111:81/", {method: 'GET', mode: 'cors', headers: {'Content-Type': 'application/json'}})
+							.then(response => response.json())
+							.then(data => {
+								points[0] = data["Team Gr\u00FCn"]["MiniQuestPoints"];
+								points[1] = data["Team Gr\u00FCn"]["ChallengePoints"];
+								points[2] = data["Team Gr\u00FCn"]["WeeklyPoints"];
+								points[3] = data["Team Rot"]["MiniQuestPoints"];
+								points[4] = data["Team Rot"]["ChallengePoints"];
+								points[5] = data["Team Rot"]["WeeklyPoints"];
+								points[6] = data["Team Blau"]["MiniQuestPoints"];
+								points[7] = data["Team Blau"]["ChallengePoints"];
+								points[8] = data["Team Blau"]["WeeklyPoints"];
+								points[9] = 154;
+								points[10] = 205;
+								points[11] = 200;
+								console.log(points);
+							})
+							.catch(error => console.error('Fehler beim Abrufen der Punkte:', error));
+					}
+					
+					for(let i = 0; i < 9; i++) {
+						$(tags[i]).text(points[i] < 9 ? "" : points[i]).width(points[i] / points[9 + (i % 3)] * 24 + 'vw');
+					}
+		</script>
 	</body>
 </html>
