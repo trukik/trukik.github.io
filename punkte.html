@@ -256,7 +256,7 @@
 			const points = [1, 9, 0, 154, 205, 200, 2, 0, 0, 154, 205, 200];
 			const tags = ["#sbgq", "#sbga", "#sbge", "#sbrq", "#sbra", "#sbre", "#sbbq", "#sbba", "#sbbe"];
 			function fetchPoints() {
-				fetch("http://94.250.204.111:81/", {method: 'GET', headers: {
+				fetch("http://94.250.204.111:81/", {method: 'GET', mode: 'no-cors', headers: {
 						'Access-Control-Allow-Origin': '*',
 						'Access-Control-Allow-Methods': 'POST, PUT, DELETE, GET, OPTIONS',
 						'Access-Control-Request-Method': '*',
