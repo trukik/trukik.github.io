@@ -257,7 +257,7 @@
 					const tags = ["#sbgq", "#sbga", "#sbge", "#sbrq", "#sbra", "#sbre", "#sbbq", "#sbba", "#sbbe"];
 					function fetchPoints() {
 
-						fetch("http://94.250.204.111:81/", {method: 'GET', mode: 'cors', headers: {'Content': 'application/json'}})
+						fetch("http://94.250.204.111:81/", {method: 'GET', mode: 'no-cors', headers: {'Content': 'application/json'}})
 							.then(response => response.json())
 							.then(data => {
 								points[0] = data["Team Gr\u00FCn"]["MiniQuestPoints"];
