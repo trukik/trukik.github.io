@@ -4,7 +4,7 @@
 		<title>Ark Quest - Punktestand</title>
 		<link href='https://fonts.googleapis.com/css?family=Passion One' rel='stylesheet'>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-		<style type="text/css">
+		<style>
 			body {
 				font-family: 'Passion One';
 			}
@@ -22,14 +22,12 @@
 				margin: 0.5vw;
 				border-radius: 4vw;
 				height: 5vw;
-			}
-
-			.flex-item-red, .flex-item-green, .flex-item-blue {
 				color: white;
 			}
 
 			.flex-item-score {
 				background-color: rgba(255, 255, 255, 0.65);
+				color: black;
 			}
 
 			.flex-item-red {
@@ -47,92 +45,32 @@
 			.scorebox, .scoreboxfinal, .kategorie {
 				font-size: 2vw;
 			}
-
-			:root { /*q,a,e muss zusammen 900 ergeben, 900 ist die Höhe ganzen Skala*/
-				/*
-				--qRed: 0.8;
-				--aRed: 0.9;
-				--eRed: 0.2;
-
-				--qGreen: 1.0;
-				--aGreen: 0.75;
-				--eGreen: 0.4;
-
-				--qBlue: 0.3;
-				--aBlue: 0.1;
-				--eBlue: 0.4;
-
-				--qRed: 0;
-				--aRed: 0;
-				--eRed: 0;
-
-				--qGreen: 0;
-				--aGreen: 0;
-				--eGreen: 0;
-
-				--qBlue: 0;
-				--aBlue: 0;
-				--eBlue: 0;
-				*/
-			}
-
-			.pb { /*Scoreboard points styles and resizes*/
-				width: 1vw;
-			}
-			.pblock {
+			
+			.sbrq, .sbra, .sbre, .sbgq, .sbga, .sbge, .sbbq, .sbba, .sbbe, .pblockq, .pblocka, .pblocke {
 				width: 24vw;
+				color: white;
 			}
 
-			.sbrq, .sbra, .sbre, .sbgq, .sbga, .sbge, .sbbq, .sbba, .sbbe {
-				width: 24vw;
+			.pblockq, .pblocka, .pblocke {
+				border-color: black;
 			}
-
-			.sbrb { /*Scoreboard red styles and resizes*/
+			
+			.sbrb, .sbgb, .sbbb, .pb { /*Scoreboard red styles and resizes*/
 				width: 1vw;
 			}
-			.sbrq {
-				/*width: calc(24vw * var(--qRed));*/
+			.sbrq, .sbgq, .sbbq, .pblockq {
 				background-color: orange;
+				border-style: solid none solid solid;
+				border-radius: 1vw 0 0 1vw;
 			}
-			.sbra {
-				/*width: calc(24vw * var(--aRed));*/
+			.sbra, .sbga, .sbba, .pblocka {
 				background-color: teal;
+				border-style: solid dashed solid dashed;
 			}
-			.sbre {
-				/*width: calc(24vw * var(--eRed));*/
-				background-color: dodgerblue;
-			}
-
-			.sbgb { /*Scoreboard green styles and resizes*/
-				width: 1vw;
-			}
-			.sbgq {
-				/*width: calc(24vw * var(--qGreen));*/
-				background-color: orange;
-			}
-			.sbga {
-				/*width: calc(24vw * var(--aGreen));*/
-				background-color: teal;
-			}
-			.sbge {
-				/*width: calc(24vw * var(--eGreen));*/
-				background-color: dodgerblue;
-			}
-
-			.sbbb { /*Scoreboard blue styles and resizes*/
-				width: 1vw;
-			}
-			.sbbq {
-				/*width: calc(24vw * var(--qBlue));*/
-				background-color: orange;
-			}
-			.sbba {
-				/*width: calc(24vw * var(--aBlue));*/
-				background-color: teal;
-			}
-			.sbbe {
-				/*width: calc(24vw * var(--eBlue));*/
-				background-color: dodgerblue;
+			.sbre, .sbge, .sbbe, .pblocke {
+				background-color: #500472;
+				border-style: solid solid solid none;
+				border-radius: 0 1vw 1vw 0;
 			}
 
 			.scorebox, .scoreboxfinal {
@@ -222,9 +160,9 @@
 			<div class="flex-item-score">
 				<div class="kategorie">PUNKTE</div>
 				<div class="scoreboxfinal pb"></div>
-				<div class="scoreboxfinal pblock" style="           background-color: orange">Questline</div>
-				<div class="scoreboxfinal pblock" style="           background-color: teal">Aufgaben</div>
-				<div class="scoreboxfinal pblock" style="           background-color: dodgerblue">Wochen Challenge</div>
+				<div class="scoreboxfinal pblockq">Questline</div>
+				<div class="scoreboxfinal pblocka">Aufgaben</div>
+				<div class="scoreboxfinal pblocke">Wochen Challenge</div>
 			</div>
 			<!--Display Score Team red-->
 			<div class="flex-item-red">
