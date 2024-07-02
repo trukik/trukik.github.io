@@ -194,7 +194,7 @@
 			const points = [0, 0, 0, 0, 0, 0, 0, 0, 0, 154, 205, 200];
 			const tags = ["#sbgq", "#sbga", "#sbge", "#sbrq", "#sbra", "#sbre", "#sbbq", "#sbba", "#sbbe"];
 			function fetchPoints() {
-				fetch("https://94.250.204.111:8443/", { mode: 'no-cors', headers: {
+				fetch("https://arkquest.cloudns.be:8443/", { mode: 'cors', headers: {
 						'Access-Control-Allow-Origin': '*',
 						'Access-Control-Allow-Methods': 'POST, PUT, DELETE, GET, OPTIONS',
 						'Access-Control-Request-Method': '*',
@@ -214,13 +214,12 @@
 						points[9] = 154;
 						points[10] = 205;
 						points[11] = 200;
+						for(let i = 0; i < 9; i++) {
+							$(tags[i]).text(points[i] < 9 ? "" : points[i]).width(points[i] / points[9 + (i % 3)] * 24 + 'vw');
+						}
 						console.log(points);
 					})
 					.catch(error => console.error('Fehler beim Abrufen der Punkte:', error));
-			}
-
-			for(let i = 0; i < 9; i++) {
-				$(tags[i]).text(points[i] < 9 ? "" : points[i]).width(points[i] / points[9 + (i % 3)] * 24 + 'vw');
 			}
 		</script>
 	</body>
