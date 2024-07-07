@@ -215,8 +215,8 @@
 						points[9] = 154;
 						points[10] = 355;
 						points[11] = 330;
-						for(let i = 0; i < 9; i++) {
-							$(tags[i]).text(points[i] < 40 ? "" : points[i]).width(points[i] / points[9 + (i % 3)] * 24 + 'vw');
+							for(let i = 0; i < 9; i++) {
+							$(tags[i]).text(points[i] < (points[9 + (i % 3)]/7) ? "" : points[i]).width(points[i] / points[9 + (i % 3)] * 24 + 'vw');
 						}
 						console.log(points);
 					})
