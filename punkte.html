@@ -192,7 +192,7 @@
 		</div>
 
 		<script>
-			const points = [0, 0, 0, 0, 0, 0, 0, 0, 0, 154, 205, 200];
+			const points = [0, 0, 0, 0, 0, 0, 0, 0, 0, 154, 355, 330];
 			const tags = ["#sbgq", "#sbga", "#sbge", "#sbrq", "#sbra", "#sbre", "#sbbq", "#sbba", "#sbbe"];
 			function fetchPoints() {
 				fetch("https://arkquest.cloudns.be:8443/", { mode: 'cors', headers: {
@@ -213,10 +213,10 @@
 						points[7] = data["Team Blau"]["ChallengePoints"];
 						points[8] = data["Team Blau"]["WeeklyPoints"];
 						points[9] = 154;
-						points[10] = 205;
-						points[11] = 200;
+						points[10] = 355;
+						points[11] = 330;
 						for(let i = 0; i < 9; i++) {
-							$(tags[i]).text(points[i] < 9 ? "" : points[i]).width(points[i] / points[9 + (i % 3)] * 24 + 'vw');
+							$(tags[i]).text(points[i] < 40 ? "" : points[i]).width(points[i] / points[9 + (i % 3)] * 24 + 'vw');
 						}
 						console.log(points);
 					})
