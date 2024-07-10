@@ -180,7 +180,7 @@
 			</div>
 			<!--Display Score Team red-->
 			<div class="flex-item-red">
-				<div class="kategorie">TEAM ROT</div>
+				<div id="red" class="kategorie">TEAM ROT</div>
 				<div class="scoreboxfinal sbrb"></div>
 				<div id="sbrq" class="scorebox sbrq"></div>
 				<div id="sbra" class="scorebox sbra"></div>
@@ -188,7 +188,7 @@
 			</div>
 			<!--Display Score Team green-->
 			<div class="flex-item-green">
-				<div class="kategorie">TEAM GRÜN</div>
+				<div id="green" class="kategorie">TEAM GRÜN</div>
 				<div class="scoreboxfinal sbgb"></div>
 				<div id="sbgq" class="scorebox sbgq"></div>
 				<div id="sbga" class="scorebox sbga"></div>
@@ -196,7 +196,7 @@
 			</div>
 			<!--Display Score Team blue-->
 			<div class="flex-item-blue">
-				<div class="kategorie">TEAM BLAU</div>
+				<div id="blue" class="kategorie">TEAM BLAU</div>
 				<div class="scoreboxfinal sbbb"></div>
 				<div id="sbbq" class="scorebox sbbq"></div>
 				<div id="sbba" class="scorebox sbba"></div>
@@ -236,9 +236,12 @@
 						points[9] = 154;
 						points[10] = 355;
 						points[11] = 330;
-							for(let i = 0; i < 9; i++) {
+						for(let i = 0; i < 9; i++) {
 							$(tags[i]).text(points[i] < (points[9 + (i % 3)]/12) ? "" : points[i]).width(points[i] / points[9 + (i % 3)] * 24 + 'vw');
 						}
+						$("#green").text($("#green").text() +" - "+(points[0]+points[1]+points[2]));
+						$("#red").text($("#red").text() +" - "+(points[3]+points[4]+points[5]));
+						$("#blue").text($("#blue").text() +" - "+(points[6]+points[7]+points[8]));
 						console.log(points);
 					})
 					.catch(error => console.error('Fehler beim Abrufen der Punkte:', error));
