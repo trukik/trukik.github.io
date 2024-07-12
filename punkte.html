@@ -47,8 +47,20 @@
 				font-size: 2vw;
 			}
 			
-			.sbrq, .sbra, .sbre, .sbgq, .sbga, .sbge, .sbbq, .sbba, .sbbe, .pblockq, .pblocka, .pblocke {
-				width: 24vw;
+			.sbrq,.sbgq,.sbbq,.pblockq{
+				width: 15.21vw;
+				color: white;
+				margin-top: -2vw;
+				padding-bottom: 2.35vw;
+			}
+			.sbra,.sbga,.sbba,.pblocka{
+				width: 36.72vw;
+				color: white;
+				margin-top: -2vw;
+				padding-bottom: 2.35vw;
+			}
+			.sbre,.sbge,.sbbe,.pblocke {
+				width: 20.07vw;
 				color: white;
 				margin-top: -2vw;
 				padding-bottom: 2.35vw;
@@ -174,9 +186,9 @@
 			<div class="flex-item-score">
 				<div class="kategorie">PUNKTE</div>
 				<div class="scoreboxfinal pb"></div>
-				<div class="scoreboxfinal pblockq">Questline</div>
-				<div class="scoreboxfinal pblocka">Aufgaben</div>
-				<div class="scoreboxfinal pblocke">Wochen Challenge</div>
+				<div class="scoreboxfinal pblockq">NPC (max 154)</div>
+				<div class="scoreboxfinal pblocka">Aufgaben (max 375)</div>
+				<div class="scoreboxfinal pblocke">Wöchentlich (max ???)</div>
 			</div>
 			<!--Display Score Team red-->
 			<div class="flex-item-red">
@@ -235,10 +247,10 @@
 						points[7] = data["Team Blau"]["ChallengePoints"];
 						points[8] = data["Team Blau"]["WeeklyPoints"];
 						points[9] = 154;
-						points[10] = 355;
-						points[11] = 330;
+						points[10] = 375;
+						points[11] = 1;
 						for(let i = 0; i < 9; i++) {
-							$(tags[i]).text(points[i] < (points[9 + (i % 3)]/12) ? "" : points[i]).width(points[i] / points[9 + (i % 3)] * 24 + 'vw');
+							$(tags[i]).text(points[i] < (points[9 + (i % 3)]/12) ? "" : points[i]).width(points[i] / points[9 + (i % 3)] * $(tags[i]).width());
 						}
 						$("#green").text($("#green").text() +" - "+(points[0]+points[1]+points[2]));
 						$("#red").text($("#red").text() +" - "+(points[3]+points[4]+points[5]));
