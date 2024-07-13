@@ -248,7 +248,7 @@
 						points[8] = data["Team Blau"]["WeeklyPoints"];
 						points[9] = 154;
 						points[10] = 375;
-						points[11] = 1;
+						points[11] = 300;
 						for(let i = 0; i < 9; i++) {
 							$(tags[i]).text(points[i] < (points[9 + (i % 3)]/12) ? "" : points[i]).width(points[i] / points[9 + (i % 3)] * $(tags[i]).width());
 						}
